@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Readmore.js: jQuery plugin for long blocks of text</title>
+  <meta name="description" content="A smooth, lightweight jQuery plugin for collapsing and expanding long blocks of text with &#8220;Read more&#8221; and &#8220;Close&#8221; links.">
+  <meta name="author" content="Jed Foster">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  <![endif]-->
+
+  <style media="screen">
+    body { font: 16px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif; color: #444; }
+    code { color: #777; font-family: "Source Code Pro", "Menlo", "Courier New", monospace;}
+    a { color: #178DB1; }
+    .container { margin: 0 auto; max-width: 960px; }
+    #info + .readmore-js-toggle { padding-bottom: 1.5em; border-bottom: 1px solid #999; font-weight: bold;}
+    #demo { padding: 0 10%; }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Readmore.js</h1>
+
+      <p>A smooth, lightweight jQuery plugin for collapsing and expanding long blocks of text with &#8220;Read more&#8221; and &#8220;Close&#8221; links. </p>
+    </header>
+
+
+
+    <h1>Demo</h1>
+
+    <section id="demo">
+
+      <article>
+        <h2>Artisanal Narwahls</h2>
+
+        <div class="col-xs-12">
+                        <h2>เตือนภัย! หนุ่มอ้างเรียนหมอ ที่แท้นิสิตแพทย์ปลอม</h2>
+                        <p></p><div><img alt="เตือนภัย! หนุ่มอ้างเรียนหมอ ที่แท้นิสิตแพทย์ปลอม" src="http://pe1.isanook.com/ns/0/ud/337/1685417/0.jpg" style="display:block; margin:0px auto; padding:0px">
+<p>นำเสนอข่าวโดยทีมงาน Sanook.com</p>
+
+<p>ผู้สื่อข่าวรายงานว่า (19 ต.ค.) ในโลกออนไลน์ได้มีการแชร์เรื่องเตือนภัย จากเฟซบุ๊ก<strong>คุณ Joe Nuttorn</strong>กรณีที่มีชายหนุ่มคนหนึ่งอ้างในเฟซบุ๊กว่าเป็นนิสิตแพทย์ เรียนอยู่ที่คณะแพทย์ศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย แต่ปรากฏว่าจากการตรวจสอบพบว่าชายดังกล่าวเป็น<em> "นิสิตแพทย์ปลอม"</em> นอกจากนี้ ภาพที่ชายคนดังกล่าวโพสต์ในเฟซบุ๊กยังมีจุดผิดสังเกตหลายอย่าง โดยข้อความทั้งหมดมีดังนี้</p>
+
+<p><em>ประกาศนิสิตแพทย์ปลอม ตามที่มีผู้ที่ใช้ชื่อว่า Woraphas ... (น.ศ.พ.เอ) ได้แอบอ้างตัวว่าเป็นนักศึกษาแพทย์อยู่ที่คณะแพทยศาสตร์ จุฬาฯ พร้อมกับโพสต์รูปดังกล่าวในชุดกาวน์ ซึ่งมีจุดสังเกตคือ</em></p>
+
+<p><em>- องค์กรชื่อ มหาวิทยาลัยจุฬาลงกรณ์ราชวิทยาลัย นั้นไม่มี มีแต่ จุฬาลงกรณ์มหาวิทยาลัย</em></p>
+
+<p><em>- ส่วนอีกองค์กรชื่อ มหาจุฬาลงกรณ์ราชวิทยาลัย นั้นไม่ได้สอนแพทย์ สอนแต่พระ</em></p>
+
+<p><em>- ทั้งสององค์กรนั้นไม่ได้สังกัดสภากาชาดไทย</em></p>
+
+<p><em>- และหมอที่สังกัดสภากาชาดไทยนั้น ไม่มีใครติดพระเกี้ยวที่หน้าอก</em></p>
+
+<p><em>จึงขอให้ สาธารณชนให้ความระมัดระวังบุคคลดังกล่าวนี้ไปแอบอ้าง และขอให้นาย Woraphas ... น.ศ.พ.เอ) หยุดพฤติกรรมแอบอ้างดังกล่าว มิฉะนั้นจะถูกดำเนินการตามกฎหมาย หรือส่งบำบัดปัญหาสุขภาพจิตต่อไป</em></p>
+</div>
+
+<div>
+<p><img alt="นิสิตแพทย์ปลอม" src="http://pe2.isanook.com/ns/0/ui/337/1685417/10310096_10152851222951757_3983090021130388051_n_1413704949__medium.jpg" style="border:1px solid rgb(187, 187, 187); height:150px; margin:0px; padding:3px; vertical-align:middle"></p>
+
+<p><img alt="นิสิตแพทย์ปลอม" src="http://pe2.isanook.com/ns/0/ui/337/1685417/10402379_10152851223351757_8841782880797015397_n_1413704949__medium.jpg" style="border:1px solid rgb(187, 187, 187); height:150px; margin:0px; padding:3px; vertical-align:middle"></p>
+
+<p><img alt="นิสิตแพทย์ปลอม" src="http://pe2.isanook.com/ns/0/ui/337/1685417/10414621_10152851223156757_1191639589911263173_n_1413704950__medium.jpg" style="border:1px solid rgb(187, 187, 187); height:150px; margin:0px; padding:3px; vertical-align:middle"></p>
+</div><p></p>
+                        <p class="lead"><a href="index.php?r=Sites/NewsDetail&amp;id=2" class="btn btn-default">อ่านทั้งหมด</a></p>
+                        <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span></p>
+                        <ul class="list-inline">
+                            <li><i class="fa fa-calendar"></i> 2014-10-20 01:18:37</li>
+                            <!--<li><a href="#"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li>-->
+                            <!--<li><a href="#"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li>-->
+                        </ul>
+                        
+                    </div>
+      </article>
+
+      <article>
+        <h2>Portland Leggings</h2>
+
+        <p>Put a bird on it you probably haven't heard of them DIY, vice photo booth terry richardson pickled vegan cray. Pug DIY blog stumptown 3 wolf moon, blue bottle farm-to-table actually banh mi fanny pack quinoa small batch. Mumblecore raw denim hoodie ethnic. Craft beer sriracha mlkshk, organic bicycle rights twee gentrify messenger bag keffiyeh ethical helvetica tumblr. Gluten-free tousled vinyl pop-up. Butcher keytar pickled literally, cosby sweater chambray authentic. Fixie odd future kale chips, church-key pinterest beard pour-over banksy typewriter dreamcatcher squid blue bottle sartorial.</p>
+
+        <p>Banksy blog craft beer PBR fap retro wayfarers polaroid narwhal blue bottle mixtape squid YOLO. Pitchfork brunch put a bird on it, fashion axe squid vegan vice pop-up organic blue bottle forage plaid deep v locavore +1. American apparel 3 wolf moon cray tonx single-origin coffee, gluten-free sartorial. Try-hard iphone pork belly bespoke keffiyeh leggings selfies, chillwave gastropub. Master cleanse plaid hella readymade. Keytar cosby sweater truffaut kogi, try-hard flannel chillwave. Truffaut selvage bespoke banjo freegan, ugh williamsburg.</p>
+
+        <p>Austin single-origin coffee umami vice pork belly, ethical williamsburg flexitarian forage aesthetic street art keytar fashion axe twee. Cliche aesthetic trust fund, williamsburg carles godard four loko. Photo booth authentic cred semiotics, pickled vegan williamsburg mixtape church-key intelligentsia irony umami PBR. Wayfarers fixie keffiyeh hella ugh, dreamcatcher kale chips banksy Austin swag stumptown deep v tattooed. Mlkshk viral seitan small batch squid cosby sweater, jean shorts neutra. Vegan pitchfork banjo readymade, helvetica ethical bushwick banksy artisan sriracha single-origin coffee. Umami viral fashion axe, marfa DIY banh mi wes anderson master cleanse cosby sweater cray selvage organic actually semiotics.
+  </p>
+
+        <p>Yr messenger bag fanny pack small batch, single-origin coffee literally gluten-free farm-to-table 8-bit godard butcher fap actually biodiesel trust fund. Pickled squid cred pug pop-up. Polaroid deep v 90's, +1 godard mumblecore retro next level carles salvia try-hard food truck gluten-free. Four loko post-ironic tofu lomo, narwhal readymade mustache jean shorts letterpress. Leggings put a bird on it farm-to-table jean shorts williamsburg cardigan. Gentrify pug bushwick PBR fixie etsy. PBR banh mi cardigan, cosby sweater master cleanse mixtape fingerstache.</p>
+      </article>
+
+      <article>
+        <h2>This section is shorter than the Readmore minimum</h2>
+
+        <p>Put a bird on it you probably haven't heard of them DIY, vice photo booth terry richardson pickled vegan cray. Pug DIY blog stumptown 3 wolf moon, blue bottle farm-to-table actually banh mi fanny pack quinoa small batch. Mumblecore raw denim hoodie ethnic. Craft beer sriracha mlkshk, organic bicycle rights twee gentrify messenger bag keffiyeh ethical helvetica tumblr. Gluten-free tousled vinyl pop-up. Butcher keytar pickled literally, cosby sweater chambray authentic. Fixie odd future kale chips, church-key pinterest beard pour-over banksy typewriter dreamcatcher squid blue bottle sartorial.</p>
+      </article>
+    </section>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  <script src="readmore.js"></script>
+
+  <script>
+  $('#info').readmore({
+    moreLink: '<a href="#">More examples and options</a>',
+    maxHeight: 390,
+    afterToggle: function(trigger, element, expanded) {
+      if(! expanded) { // The "Close" link was clicked
+        $('html, body').animate( { scrollTop: element.offset().top }, {duration: 100 } );
+      }
+    }
+  });
+
+    $('article').readmore({maxHeight: 500});
+  </script>
+</body>
+</html>
