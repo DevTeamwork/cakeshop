@@ -23,7 +23,8 @@
             },
             submitHandler: function (form) {
 //                newsSave($("#form").serialize());
-                alert($("#form").serialize());
+//                alert($("#form").serialize());
+                category_save($("#form").serialize());
 
             }
 
@@ -57,13 +58,21 @@
             "language": languageObj
         });
 
-//        $(".delete").on("click", function () {
-//            var _a = $(this).parent().find('button');
-//            var id = _a.data().id;
-//            var name = _a.data().name;
-//            var row = $(this).parents('tr:first');
-//            pubishedDelete(id, name, row);
-//        });
+        $(".delete").on("click", function () {
+            var id = $(this).data().id;
+            var name = $(this).data().name;
+            var row = $(this).parents('tr:first');
+            category_delete(id,name,row);
+        });
+        
+        $(".edit").on("click", function () {
+            var row = $(this).parents('tr:first');
+            var id = $(this).data().id;
+            var name = $(this).data().name;
+            
+            $("#category_id").val(id);
+            $("#name").val(name);                       
+        });
 
 
     });
@@ -86,7 +95,7 @@
         <form role="form" id="form">
             <div class="row">
                 <div class="col-lg-6">
-                    <input type="hidden" id="id" name="id" value="0"/>
+                    <input type="hidden" id="category_id" name="category_id" value="0"/>
                     <div class="form-group">
                         <label>ชื่อประเภทสินค้า</label>
                         <input class="form-control" id="name" name="name" placeholder="ชื่อประเภทสินค้า">
@@ -122,17 +131,16 @@
                         <td style="width: 80%;"><?php echo $name; ?></td> 
                         <td style="width: 15%;">
                             <div class="btn-group" >
-    <!--                                <a href="index.php?r=Sites/NewsDetail&id=<?php echo $id; ?>" class="btn btn-primary view-site" data-title="ดูรายละเอียด" rel="tooltip">
-                                    <i class="glyphicon glyphicon-eye-open"></i>
-                                </a>-->
-                                <a class="btn btn-warning view-site"data-title="แก้ไข" rel="tooltip"
-                                   href="index.php?r=Sites/NewsEdit&id=<?php echo $id; ?>">
-                                    <i class="glyphicon glyphicon-edit"></i>
-                                </a>
-                                <button class="btn btn-danger view-site delete" href="#" data-title="ลบ" rel="tooltip" data-id="<?php echo $id; ?>" data-name="<?php echo $title; ?>">
+                                <button class="edit" data-title="แก้ไข" rel="tooltip" 
+                                        data-id="<?php echo $id; ?>" 
+                                        data-name="<?php echo $name; ?>">
+                                    <i class="glyphicon glyphicon-edit"></i></button>
+                                <button class="delete" href="#" data-title="ลบ" rel="tooltip" 
+                                        data-id="<?php echo $id; ?>" 
+                                        data-name="<?php echo $name; ?>">
                                     <i class="glyphicon glyphicon-remove"></i></button>
 
-                            </div> 
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -1,21 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "gallerys".
+ * This is the model class for table "banks".
  *
- * The followings are the available columns in table 'gallerys':
- * @property integer $galleryId
- * @property string $image_path
- * @property integer $website_id
+ * The followings are the available columns in table 'banks':
+ * @property integer $bank_id
+ * @property string $bank_name
+ * @property string $branch
+ * @property string $account_no
+ * @property string $account_name
+ * @property string $image
  */
-class Gallerys extends CActiveRecord
+class Banks extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'gallerys';
+		return 'banks';
 	}
 
 	/**
@@ -26,12 +29,12 @@ class Gallerys extends CActiveRecord
 //		// NOTE: you should only define rules for those attributes that
 //		// will receive user inputs.
 //		return array(
-//			array('image_path, website_id', 'required'),
-//			array('website_id', 'numerical', 'integerOnly'=>true),
-//			array('image_path', 'length', 'max'=>255),
+//			array('bank_name, branch, account_no, account_name, image', 'required'),
+//			array('bank_name, branch, account_name, image', 'length', 'max'=>255),
+//			array('account_no', 'length', 'max'=>10),
 //			// The following rule is used by search().
 //			// @todo Please remove those attributes that should not be searched.
-//			array('galleryId, image_path, website_id', 'safe', 'on'=>'search'),
+//			array('bank_id, bank_name, branch, account_no, account_name, image', 'safe', 'on'=>'search'),
 //		);
 //	}
 
@@ -52,9 +55,12 @@ class Gallerys extends CActiveRecord
 //	public function attributeLabels()
 //	{
 //		return array(
-//			'galleryId' => 'Gallery',
-//			'image_path' => 'Image Path',
-//			'website_id' => 'Website',
+//			'bank_id' => 'Bank',
+//			'bank_name' => 'Bank Name',
+//			'branch' => 'Branch',
+//			'account_no' => 'Account No',
+//			'account_name' => 'Account Name',
+//			'image' => 'Image',
 //		);
 //	}
 
@@ -76,9 +82,12 @@ class Gallerys extends CActiveRecord
 //
 //		$criteria=new CDbCriteria;
 //
-//		$criteria->compare('galleryId',$this->galleryId);
-//		$criteria->compare('image_path',$this->image_path,true);
-//		$criteria->compare('website_id',$this->website_id);
+//		$criteria->compare('bank_id',$this->bank_id);
+//		$criteria->compare('bank_name',$this->bank_name,true);
+//		$criteria->compare('branch',$this->branch,true);
+//		$criteria->compare('account_no',$this->account_no,true);
+//		$criteria->compare('account_name',$this->account_name,true);
+//		$criteria->compare('image',$this->image,true);
 //
 //		return new CActiveDataProvider($this, array(
 //			'criteria'=>$criteria,
@@ -89,7 +98,7 @@ class Gallerys extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Gallerys the static model class
+	 * @return Banks the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

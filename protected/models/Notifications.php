@@ -1,21 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "notifications".
  *
- * The followings are the available columns in table 'users':
- * @property integer $userid
- * @property string $username
- * @property string $password
+ * The followings are the available columns in table 'notifications':
+ * @property integer $notificatioin_id
+ * @property string $create_date
+ * @property string $create_time
+ * @property integer $user_id
+ * @property integer $bill_id
  */
-class Users extends CActiveRecord
+class Notifications extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'notifications';
 	}
 
 	/**
@@ -26,11 +28,11 @@ class Users extends CActiveRecord
 //		// NOTE: you should only define rules for those attributes that
 //		// will receive user inputs.
 //		return array(
-//			array('username, password', 'required'),
-//			array('username, password', 'length', 'max'=>50),
+//			array('create_date, create_time, user_id, bill_id', 'required'),
+//			array('user_id, bill_id', 'numerical', 'integerOnly'=>true),
 //			// The following rule is used by search().
 //			// @todo Please remove those attributes that should not be searched.
-//			array('userid, username, password', 'safe', 'on'=>'search'),
+//			array('notificatioin_id, create_date, create_time, user_id, bill_id', 'safe', 'on'=>'search'),
 //		);
 //	}
 
@@ -51,9 +53,11 @@ class Users extends CActiveRecord
 //	public function attributeLabels()
 //	{
 //		return array(
-//			'userid' => 'Userid',
-//			'username' => 'Username',
-//			'password' => 'Password',
+//			'notificatioin_id' => 'Notificatioin',
+//			'create_date' => 'Create Date',
+//			'create_time' => 'Create Time',
+//			'user_id' => 'User',
+//			'bill_id' => 'Bill',
 //		);
 //	}
 
@@ -75,9 +79,11 @@ class Users extends CActiveRecord
 //
 //		$criteria=new CDbCriteria;
 //
-//		$criteria->compare('userid',$this->userid);
-//		$criteria->compare('username',$this->username,true);
-//		$criteria->compare('password',$this->password,true);
+//		$criteria->compare('notificatioin_id',$this->notificatioin_id);
+//		$criteria->compare('create_date',$this->create_date,true);
+//		$criteria->compare('create_time',$this->create_time,true);
+//		$criteria->compare('user_id',$this->user_id);
+//		$criteria->compare('bill_id',$this->bill_id);
 //
 //		return new CActiveDataProvider($this, array(
 //			'criteria'=>$criteria,
@@ -88,7 +94,7 @@ class Users extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Users the static model class
+	 * @return Notifications the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -58,52 +58,15 @@
         $('#table').dataTable({
             "language": languageObj
         });
-
-        $("#example").on('click', 'tr > td > div.ui > button.edit ', function (e) {
-
-                var row = $(this).parents('tr:first');
-//                var id = $(this).data().announcement_id;
-                alert($(this).data().id);
-                //var name = $(this).data().message;
-//                var message = $(this).closest('tr').children('td:eq(1)').html();
-//                var startdate = $(this).data().startdate;
-//                var enddate = $(this).data().enddate;
-
-//                //alert("id : " + id + "name : " + name + " startdate : " + startdate + " enddate : "+enddate);
-//                $('#AnnouncementID').val(id);
-//                $('#editor1').val(message);
-//                $('#editor1').focus();
-//                $('#from_AppSchedule').val(startdate);
-//                $('#to_AppSchedule').val(enddate);
-//
-//                $('#textAdd').text("Save");
-//                $('.info.message i').removeClass('add');
-//                $('.info.message i').addClass('edit');
-//                $('.header.title').text("Edit message in announcement");
-//
-//                //location.href = "#form" anchorAnimate();
-//                
-//                //$("a.edit").anchorAnimate();
-//
-//                var elementClick = "#form";
-//                var destination = $(elementClick).offset().top;
-//                $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination }, 1100, function () {
-//                    window.location.hash = elementClick
-//                });
-            });
             
         $(".delete").on("click", function () {
-//            var _a = $(this).parent().find('button');
             var id = $(this).data().id;
             var name = $(this).data().name;
             var row = $(this).parents('tr:first');
-//            pubishedDelete(id, name, row);
-//            alert("del: "+name);
             product_delete(id,name,row);
         });
         
         $(".edit").on("click", function () {
-//            var _a = $(this).parent().find('button');
             var row = $(this).parents('tr:first');
             var id = $(this).data().id;
             var name = $(this).data().name;
@@ -121,7 +84,7 @@
             $("#category_id").val(category_id);
             $("#size").val(size);
                        
-            alert("edit :"+size);
+//            alert("edit :"+size);
         });
     });
 </script>
@@ -135,12 +98,15 @@
     <li><a href="index.php?r=Products/index"><i class="fa fa-graduation-cap fa-fw"></i> ระบบสินค้า</a></li>
     <li class="active">เพิ่มสินค้าใหม่</li>                                        
 </ol>
+
+
 <div class="panel panel-default">
 <!--    <div class="panel-heading">
         Basic Form Elements
     </div>-->
     <div class="panel-body">
-        <form role="form" id="form">
+                                <div class="col-xs-6">.col-xs-6</div>
+                                <div class="col-xs-6">       <form role="form" id="form">
             <input type="hidden" id="user_id" name="user_id" value="1"/>
             <input type="hidden" id="product_id" name="product_id" value="0"/>
             <div class="form-group">
@@ -181,7 +147,8 @@
             </div>
             <button type="submit" class="btn btn-primary">บันทึก</button>
             <button type="reset" class="btn btn-warning">เคียร์ค่า</button>
-        </form>
+        </form></div>
+
         <hr>
         <!-- /.row (nested) -->
         <table class="table table-condensed table-striped" id="table">
@@ -216,7 +183,7 @@
                         <td style="width: 10%;"><?php echo $price; ?></td> 
                         <td style="width: 15%;">
                             <div class="btn-group" >
-                                <button class="edit" data-title="ลบ" rel="tooltip" 
+                                <button class="edit" data-title="แก้ไข" rel="tooltip" 
                                         data-id="<?php echo $id; ?>" 
                                         data-name="<?php echo $name; ?>"
                                         data-time="<?php echo $time;?>"

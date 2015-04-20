@@ -48,6 +48,7 @@
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/dataTables/dataTables.bootstrap.js");
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/dataTables/dataTables.bootstrap.js");
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/scripts/cakeshop.product.script.js");
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/scripts/cakeshop.bank.script.js");
         
         ?>
 
@@ -318,11 +319,11 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Tables</a>
+                        <li id="bank">
+                            <a id="index" href="index.php?r=Banks/Index"><i class="fa fa-table fa-fw"></i> เพิ่มธนาคาร</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        <li id="notification">
+                            <a href="index.php?r=Reports/Notification"><i class="fa fa-edit fa-fw"></i> รายการแจ้งเตือน</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
