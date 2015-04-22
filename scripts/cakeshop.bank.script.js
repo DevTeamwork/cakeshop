@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function product_save(data) {
+function bank_save(data) {
 //    console.log(data);
     $.ajax({
-        url: 'index.php?r=Products/Save',
+        url: 'index.php?r=Banks/Save',
         type: 'POST',
         data: data,
         success: function(data) {
             if (data == '1') {
-//                alert("บันทึกแล้ว");
+                alert("บันทึกแล้ว");
                 location.reload();
             } else {
                 alert(data);
@@ -22,12 +22,12 @@ function product_save(data) {
     return false;
 }
 
-function product_delete(id,name,row) {
+function bank_delete(id,name,row) {
 
 //    alert('deleteSite : '+data['website_id']);
     if (confirm("ต้องการลบ "+name+" หรือไม่?")) {
         $.ajax({
-            url: 'index.php?r=Products/Delete'
+            url: 'index.php?r=Banks/Delete'
             , data: {
                 id: id
             }
