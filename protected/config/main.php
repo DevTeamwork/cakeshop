@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Web Application',
-        'defaultController' => 'Site',   
+        'defaultController' => 'Frontend',   
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -59,7 +59,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=cakeshop_db',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'root',
+			'password' => '1234',
 			'charset' => 'utf8',
 		),
 		

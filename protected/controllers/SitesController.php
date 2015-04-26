@@ -326,10 +326,7 @@ class SitesController extends Controller {
     }
 
     public function actionUpload() {
-//        define('UPLOAD_DIR_IMAGE', 'D:\\AppServ\\www\\dreamdata\\uploads\\' . $site_id . '\\images\\');
-//        if (!file_exists(UPLOAD_DIR_IMAGE)) {
-//            mkdir(UPLOAD_DIR_IMAGE);
-//        }
+
        $website_id =  yii::app()->session['website_id'];
        define('UPLOAD_DIR_Website', 'D:\\AppServ\\www\\dreamdata\\uploads\\' . $website_id . '\\');
         if (!file_exists(UPLOAD_DIR_Website)) {
