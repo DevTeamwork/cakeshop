@@ -1,70 +1,78 @@
 <!-- service -->
 <div class="biseller-info">
     <div class="container">
-        <h2>Products</h2>
+        <h2>Products </h2> Count : <?php echo count($products); ?>
         <h3 class="new-models">new varieties</h3>
         <ul id="flexiselDemo3">
-            <li>
-                <div class="biseller-column">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/11.jpg" alt="" class="veiw-img">
-                    <div class="veiw-img-mark">
-                        <a href="singlepage.html">Quick view</a>
-                    </div>
-                    <div class="biseller-name">
-                        <h4>Delicious</h4>
-                        <p>$ 170.99</p>
-                    </div>
-                    <a href="singlepage.html"><button class="add2cart">
-                            <span>| Add to Cart</span>
-                        </button></a>					
-                </div>
-            </li>
-            <li>
-                <div class="biseller-column">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/12.jpg" alt="" class="veiw-img">
-                    <div class="veiw-img-mark">
-                        <a href="singlepage.html">Quick view</a>
-                    </div>
-                    <div class="biseller-name">
-                        <h4>Printed Cake</h4>
-                        <p>$ 600.99</p>
-                    </div>
-                    <a href="singlepage.html"><button class="add2cart">
-                            <span>| Add to Cart</span>
-                        </button></a>					
-                </div>
-            </li>
 
-            <li>
-                <div class="biseller-column">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/13.jpg" alt="" class="veiw-img">
-                    <div class="veiw-img-mark">
-                        <a href="singlepage.html">Quick view</a>
+            <?php foreach ($products as $product) : ?>
+
+                <li>
+                    <div class="biseller-column">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/11.jpg" alt="" class="veiw-img">
+                        <div class="veiw-img-mark">
+                            <!--<a href="singlepage.html">Quick view</a>-->
+                        </div>
+                        <div class="biseller-name">
+                            <h4><?php echo $product['name']; ?></h4>
+                            <p>ราคา <?php echo $product['price']; ?> บาท</p>
+                        </div>
+                        <a href="index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>">
+                            <button class="add2cart">
+                                <span>| Add to Cart</span>
+                            </button>
+                        </a>					
                     </div>
-                    <div class="biseller-name">
-                        <h4>Forest Egg</h4>
-                        <p>$ 400.99</p>
-                    </div>
-                    <a href="singlepage.html"><button class="add2cart">
-                            <span>| Add to Cart</span>
-                        </button></a>
-                </div>
-            </li>
-            <li>
-                <div class="biseller-column">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/14.jpg" alt="" class="veiw-img">
-                    <div class="veiw-img-mark">
-                        <a href="singlepage.html">Quick view</a>
-                    </div>
-                    <div class="biseller-name">
-                        <h4>Butter Scotch </h4>
-                        <p>$ 219.99</p>
-                    </div>
-                    <a href="singlepage.html"><button class="add2cart">
-                            <span>| Add to Cart</span>
-                        </button></a>
-                </div>
-            </li>
+                </li>
+
+            <?php endforeach; ?>
+
+            <!--            <li>
+                            <div class="biseller-column">
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/12.jpg" alt="" class="veiw-img">
+                                <div class="veiw-img-mark">
+                                    <a href="singlepage.html">Quick view</a>
+                                </div>
+                                <div class="biseller-name">
+                                    <h4>Printed Cake</h4>
+                                    <p>$ 600.99</p>
+                                </div>
+                                <a href="singlepage.html"><button class="add2cart">
+                                        <span>| Add to Cart</span>
+                                    </button></a>					
+                            </div>
+                        </li>
+            
+                        <li>
+                            <div class="biseller-column">
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/13.jpg" alt="" class="veiw-img">
+                                <div class="veiw-img-mark">
+                                    <a href="singlepage.html">Quick view</a>
+                                </div>
+                                <div class="biseller-name">
+                                    <h4>Forest Egg</h4>
+                                    <p>$ 400.99</p>
+                                </div>
+                                <a href="singlepage.html"><button class="add2cart">
+                                        <span>| Add to Cart</span>
+                                    </button></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="biseller-column">
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/14.jpg" alt="" class="veiw-img">
+                                <div class="veiw-img-mark">
+                                    <a href="singlepage.html">Quick view</a>
+                                </div>
+                                <div class="biseller-name">
+                                    <h4>Butter Scotch </h4>
+                                    <p>$ 219.99</p>
+                                </div>
+                                <a href="singlepage.html"><button class="add2cart">
+                                        <span>| Add to Cart</span>
+                                    </button></a>
+                            </div>
+                        </li>-->
         </ul>
     </div>
 </div>	
@@ -98,7 +106,7 @@
 </script>
 <script type="text/javascript" src="js/jquery.flexisel.js"></script>
 
-<div class="best-seller">
+<!--<div class="best-seller">
     <div class="container">
         <div class="biseller-info">
             <h3 class="new-models">varieties</h3>
@@ -166,7 +174,7 @@
             </ul>
         </div>
     </div>
-</div>
+</div>-->
 <script type="text/javascript">
     $(window).load(function () {
         $("#flexiselDemo1").flexisel({

@@ -20,7 +20,8 @@ class FrontendController extends Controller {
     }
     
     public function actionProducts() {
-        
-        $this->render('products');
+        $products = Products::model()->findAll();
+        //print_r($products);
+        $this->render('products', array('products' => $products));
     }
 }

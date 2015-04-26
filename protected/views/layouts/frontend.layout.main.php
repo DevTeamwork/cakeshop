@@ -7,6 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Sweet-cakes Website Template | Home :: w3layouts</title>
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/frontend/bootstrap.css" rel='stylesheet' type='text/css' />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
