@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/cakeshop/protected/views/frontend/products.php</file>
-            <file>file:/var/www/html/cakeshop/protected/views/products/add.php</file>
-            <file>file:/var/www/html/cakeshop/protected/controllers/ProductsController.php</file>
-            <file>file:/var/www/html/cakeshop/protected/controllers/CartController.php</file>
-            <file>file:/var/www/html/cakeshop/protected/views/products/index.php</file>
-            <file>file:/var/www/html/cakeshop/protected/controllers/FrontendController.php</file>
-            <file>file:/var/www/html/cakeshop/protected/views/frontend/index.php</file>
-            <file>file:/var/www/html/cakeshop/protected/views/cart/add_to_cart.php</file>
+            <file>file:/C:/AppServ/www/cakeshop/protected/views/layouts/frontend.layout.main.php</file>
+            <file>file:/C:/AppServ/www/cakeshop/scripts/cakeshop.frontend.script.js</file>
+            <file>file:/C:/AppServ/www/cakeshop/scripts/websites.js</file>
+            <file>file:/C:/AppServ/www/cakeshop/protected/controllers/FrontendController.php</file>
+            <file>file:/C:/AppServ/www/cakeshop/protected/controllers/BanksController.php</file>
+            <file>file:/C:/AppServ/www/cakeshop/protected/views/frontend/login.php</file>
+            <file>file:/C:/AppServ/www/cakeshop/protected/views/frontend/register.php</file>
+            <file>file:/C:/AppServ/www/cakeshop/protected/controllers/SitesController.php</file>
         </group>
     </open-files>
 </project-private>

@@ -11,16 +11,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <title>Sweet-cakes Website Template | Home :: w3layouts</title>
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/frontend/bootstrap.css" rel='stylesheet' type='text/css' />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"></script>
+        <!--<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"></script>-->
         <!-- Custom Theme files -->
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/frontend/style.css" rel='stylesheet' type='text/css' />
         <!-- Custom Theme files -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    </script>
     <!----webfonts--->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,800,400,600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,800,400,600' rel='stylesheet' type='text/css'>
     <!---//webfonts--->
+    
+         <?php
+        date_default_timezone_set("Asia/Bangkok");
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/jquery.js");
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/jquery.validate.min.js");
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/bootstrap.min.js");
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/metisMenu/metisMenu.min.js");
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/sb-admin-2.js");
+        //Morris Charts JavaScript
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/morris/raphael.min.js");
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/morris/morris.min.js");
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/morris/morris-data.js");
+        
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/dataTables/jquery.dataTables.js");
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/dataTables/dataTables.bootstrap.js");
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/dataTables/dataTables.bootstrap.js");
+//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/scripts/cakeshop.product.script.js");
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/scripts/cakeshop.frontend.script.js");
+        
+        ?>
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 <body>
     <!-- container -->
@@ -46,8 +65,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </form>
 
                     </li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="index.php?r=frontend/login">Login</a></li>
+                    <li><a href="index.php?r=frontend/Register">Register</a></li>
                 </ul>
             </div>
             <div class="clearfix"> </div>
