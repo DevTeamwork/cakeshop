@@ -48,15 +48,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container">
             <div class="top-header-left">
                 <ul>
-                    <li><a href="myaccount.html">My Account</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="myaccount.html">ข้อมูลส่วนตัว</a></li>
+                    <li><a href="index.php?r=frontend/login">เข้าสู่ระบบ</a></li>
+                    <li><a href="index.php?r=frontend/Register">สมัครสมาชิก</a></li>
                     <div class="clearfix"> </div>
                 </ul>
             </div>
             <div class="top-header-center">
-                <p><span class="cart"> </span>Cart<label>$5256</label></p>
+                <p><a style="color: #ffffff;" href="index.php?r=Cart/showCart"><span class="cart"> </span>ตะกร้าสินค้า</a></p>
             </div>
-            <div class="top-header-right">
+            <div class="top-header-right" >
                 <ul>
                     <li>
                         <form>
@@ -65,8 +66,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </form>
 
                     </li>
-                    <li><a href="index.php?r=frontend/login">Login</a></li>
-                    <li><a href="index.php?r=frontend/Register">Register</a></li>
                 </ul>
             </div>
             <div class="clearfix"> </div>
@@ -79,10 +78,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="head-nav">
                 <span class="menu"> </span>
                 <ul>
-                    <li class="active"><a href="index.php?r=frontend">Home</a></li>
-                    <li><a href="index.php?r=frontend/products">products</a></li>
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="active"><a href="index.php?r=frontend">หน้าแรก</a></li>
+                    <li><a href="index.php?r=frontend/products">สินค้า</a></li>
+                    <li><a href="#" style="margin-left: 80px;">เกี่ยวกับเรา</a></li>
+                    <li><a href="#">ติดต่อเรา</a></li>
                     <div class="clearfix"> </div>
                 </ul>
             </div>	

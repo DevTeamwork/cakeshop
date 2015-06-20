@@ -1,8 +1,7 @@
 <!-- service -->
 <div class="biseller-info">
     <div class="container">
-        <h2>Products </h2> Count : <?php echo count($products); ?>
-        <h3 class="new-models">new varieties</h3>
+        <h3 class="new-models">รายการสินค้า</h3>
         <ul id="flexiselDemo3">
 
             <?php foreach ($products as $product) : ?>

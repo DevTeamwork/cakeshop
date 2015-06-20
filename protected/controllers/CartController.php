@@ -49,9 +49,8 @@ class CartController extends Controller {
                 $session[] = $item;
             }
             Yii::app()->session['my_cart'] = $session;
-
-            $this->redirect('index.php?r=cart/showCart');
         }
+        $this->redirect('index.php?r=cart/showCart');
     }
     
     public function actionShowCart() {
@@ -79,5 +78,53 @@ class CartController extends Controller {
         Yii::app()->session['my_cart'] = $temp_cart;
         $this->redirect('index.php?r=cart/showCart');
     }
+    
+    public function actionCalculateItem() {
+        $qty = $_POST['qty'];
+        $my_cart = Yii::app()->session['my_cart'];
+        
+        for ($i = 0; $i < count($my_cart); $i++) {
+            $my_cart[$i]['product_qty'] = $qty[$i];  
+        }
+        Yii::app()->session['my_cart'] = $my_cart;
+        $this->redirect('index.php?r=cart/showCart');
+    }
+    
+    public function actionShowOrderCart() {
+        $customer = Users::model()->findByPk(3);
+        $this->render('show_order_cart', array('customer' => $customer));
+    }
+    
+    public function actionSaveOrder() {
+        if (!empty($_POST)) {
+            $customer_id = $_POST['customer_id'];
+            $my_cart = Yii::app()->session['my_cart'];
 
+            $order = new Order();
+            $order->customer_id = $customer_id;
+            $order->order_status = 0;
+            if ($order->save()) {
+                for ($i = 0; $i < count($my_cart); $i++) {
+                    $order_detail = new OrderDetail();
+                    $order_detail->order_id = $order->order_id;
+                    $order_detail->product_id = $my_cart[$i]['product_id'];
+                    $order_detail->order_qty = $my_cart[$i]['product_qty'];
+                    $order_detail->product_price = $my_cart[$i]['product_price'];
+                    $order_detail->save();
+                }
+                Yii::app()->session['my_cart'] = null;
+                $this->actionRenderResultPage();
+            } 
+//            else {
+//                echo "cannot save";
+//                 var_dump($order->getErrors());
+//            }
+        } else {
+            echo "not post";
+        }   
+    }
+    
+    public function actionRenderResultPage() {
+        $this->render('save_order_result');
+    }
 }
