@@ -923,3 +923,14 @@ Stack trace:
 REQUEST_URI=/cakeshop/index.php?r=cart/calculateItem
 in C:\xampp\htdocs\cakeshop\protected\controllers\CartController.php (83)
 in C:\xampp\htdocs\cakeshop\index.php (13)
+2015/06/28 07:56:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "customizeCake".' in C:\xampp\htdocs\cakeshop\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\cakeshop\framework\web\CController.php(270): CController->missingAction('customizeCake')
+#1 C:\xampp\htdocs\cakeshop\framework\web\CWebApplication.php(282): CController->run('customizeCake')
+#2 C:\xampp\htdocs\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Frontend/custom...')
+#3 C:\xampp\htdocs\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\cakeshop\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cakeshop/index.php?r=Frontend/customizeCake&product_id=9
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=frontend/products
+---

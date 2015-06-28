@@ -110,7 +110,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- footer -->
     <div class="footer">
         <div class="container">
-            <div class="footer-top">
+            <!--<div class="footer-top">
                 <div class="col-md-3 location">
                     <h4>location</h4>
                     <p>#04 Dist.City,State,PK</p>
@@ -147,7 +147,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </form>
                 </div>
                 <div class="clearfix"> </div>
-            </div>
+            </div>-->
             <div class="footer-bottom">
                 <p>Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
             </div>

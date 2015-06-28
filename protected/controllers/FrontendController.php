@@ -24,9 +24,16 @@ class FrontendController extends Controller {
         //print_r($products);
         $this->render('products', array('products' => $products));
     }
+    
+    public function actionCustomizeCake($product_id) {
+        $product = Products::model()->findByPk($product_id);
+        $this->render('customize_cake', array('product' => $product));
+    }
+    
     public function actionLogin(){
         $this->render('login');
     }
+    
     public function actionCheckLogin(){
         if (!empty($_POST)) {
 //            print_r($_POST);                 
