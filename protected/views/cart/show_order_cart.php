@@ -120,6 +120,12 @@
 
 
 </style>
+<script type="text/javascript">
+    $(function() {
+        $('#send_date').datepicker();
+    });
+</script>
+
 <div class="biseller-info">
     <div class="container">
         
@@ -141,6 +147,11 @@
                 <div>
                     <span><label>ที่อยู่</label></span>
                     <span><textarea name="customer_address"><?php echo $customer->address; ?></textarea></span>
+                </div>
+                
+                <div>
+                    <span><label>วันที่ส่งสินค้า</label></span>
+                    <span><input type="text" name="send_date" id="send_date"></span>
                 </div>
                 <input type="hidden" name="customer_id" value="<?php echo $customer->user_id; ?>">
              </div>

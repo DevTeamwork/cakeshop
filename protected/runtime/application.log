@@ -934,3 +934,14 @@ Stack trace:
 REQUEST_URI=/cakeshop/index.php?r=Frontend/customizeCake&product_id=9
 HTTP_REFERER=http://localhost/cakeshop/index.php?r=frontend/products
 ---
+2015/06/28 10:22:40 [error] [php] Undefined variable: send_date (C:\xampp\htdocs\cakeshop\protected\controllers\CartController.php:103)
+Stack trace:
+#0 C:\xampp\htdocs\cakeshop\framework\web\CController.php(286): CartController->runAction()
+#1 C:\xampp\htdocs\cakeshop\framework\web\CController.php(265): CartController->runActionWithFilters()
+#2 C:\xampp\htdocs\cakeshop\framework\web\CWebApplication.php(282): CartController->run()
+#3 C:\xampp\htdocs\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=cart/saveOrder
+in C:\xampp\htdocs\cakeshop\protected\controllers\CartController.php (103)
+in C:\xampp\htdocs\cakeshop\index.php (13)
