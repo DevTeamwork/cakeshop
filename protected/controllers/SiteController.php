@@ -6,6 +6,17 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$this->render('index');
+                
+//        $this->render('index', array(
+//            'totalProduct' => $websites,
+//            'totalBill' => $userid,
+//            'is_admin' => $is_admin,
+//            'webboards' => $webboards,
+//            'totalKhowledges' => $totalKnowledges,
+//            'totalNews' => $totalNews,
+//            'totalUsers' => $totalUsers,
+//            'totalview' => $totalview
+//        ));
 	}
 
 	// Uncomment the following methods and override them if needed
