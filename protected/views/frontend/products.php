@@ -16,11 +16,12 @@
                             <h4><?php echo $product['name']; ?></h4>
                             <p>ราคา <?php echo $product['price']; ?> บาท</p>
                         </div>
-                        <a href="index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>">
+                        <a href="index.php?r=Frontend/customizeCake&product_id=<?php echo $product['product_id']; ?>">เลือก</a>
+                        <!--<a href="index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>">
                             <button class="add2cart">
                                 <span>| Add to Cart</span>
                             </button>
-                        </a>					
+                        </a>-->					
                     </div>
                 </li>
 
