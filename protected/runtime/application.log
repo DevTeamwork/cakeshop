@@ -924,6 +924,7 @@ REQUEST_URI=/cakeshop/index.php?r=cart/calculateItem
 in C:\xampp\htdocs\cakeshop\protected\controllers\CartController.php (83)
 in C:\xampp\htdocs\cakeshop\index.php (13)
 <<<<<<< HEAD
+<<<<<<< HEAD
 2015/06/26 00:08:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\AppServ\www\cakeshop\framework\db\CDbConnection.php:382
 Stack trace:
 #0 C:\AppServ\www\cakeshop\framework\db\CDbConnection.php(330): CDbConnection->open()
@@ -1132,6 +1133,8 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/cakeshop/index.php?r=Reports/OderDetail?id=10
 =======
+=======
+>>>>>>> origin/master
 2015/06/28 07:56:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "customizeCake".' in C:\xampp\htdocs\cakeshop\framework\web\CController.php:483
 Stack trace:
 #0 C:\xampp\htdocs\cakeshop\framework\web\CController.php(270): CController->missingAction('customizeCake')
@@ -1142,5 +1145,8 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/cakeshop/index.php?r=Frontend/customizeCake&product_id=9
 HTTP_REFERER=http://localhost/cakeshop/index.php?r=frontend/products
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 ---
