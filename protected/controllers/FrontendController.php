@@ -42,7 +42,7 @@ class FrontendController extends Controller {
                 AND password =  "' . $_POST['password'] . '"';
             $user = Yii::app()->db->createCommand($query)->queryRow();
             
-            var_dump($user);
+           // var_dump($user);
             if ($user) {
                 Yii::app()->session["user_id"] = $user["user_id"]; 
                 Yii::app()->session["username"] = $user["username"];
