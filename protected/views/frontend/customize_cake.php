@@ -27,6 +27,11 @@
     function changeCake(url) {
         $('#main-cake').attr('src', url);
     }
+    
+    function redirectToCart() {
+        var greeting = $('#greeting_text').val();
+        window.location.href = 'index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=' + greeting;
+    }
 </script>
 <div class="biseller-info">
     <div class="container">
@@ -37,7 +42,7 @@
             <div class="biseller-name" style="margin-top: 10px;">
                 <h4><?php echo $product['name']; ?></h4>
                 <p>ราคา <?php echo $product['price']; ?> บาท</p>
-                <a href="index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>">
+                <a href="javascript:redirectToCart()">
                     <button class="add2cart">
                         <span>| หยิบใส่ตะกร้า</span>
                     </button>
@@ -60,6 +65,10 @@
                     <td></td>
                 </tr>
             </table>
+            <div class="contact-form">
+                <h4>คำอวยพร</h4>
+                <textarea id="greeting_text"></textarea>
+            </div>
         </div>
         
     </div>

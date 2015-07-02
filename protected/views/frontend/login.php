@@ -1,23 +1,23 @@
 <script>
 $(function() {
 //    alert("asdf");
-        $('#form').validate({
-            rules: {
-                email: "required",
-                password: "required",
-            },
-            messages: {
-                email: "กรุณากรอก อีเมลล์",
-                password: "กรุณากรอก รหัสผ่าน",
-            },
-            submitHandler: function (e) {
-//                product_save($("#form").serialize());
-//                alert("Login");
-                login($("#form").serialize());
-                
-            }
-
-        });
+//        $('#form').validate({
+//            rules: {
+//                email: "required",
+//                password: "required",
+//            },
+//            messages: {
+//                email: "กรุณากรอก อีเมลล์",
+//                password: "กรุณากรอก รหัสผ่าน",
+//            },
+//            submitHandler: function (e) {
+////                product_save($("#form").serialize());
+////                alert("Login");
+//                login($("#form").serialize());
+//                
+//            }
+//
+//        });
     });
 </script>
 <div class="content">
@@ -30,9 +30,9 @@ $(function() {
                     <a class="acount-btn" href="index.php?r=frontend/Register">Create an Account</a>
                 </div>
                 <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
-                    <h3>REGISTERED CUSTOMERS</h3>
-                    <p>If you have an account with us, please log in.</p>
-                    <form id="form">
+                    <h3>เข้าสู่ระบบ</h3>
+                    
+                    <form id="form" method="post" action="index.php?r=frontend/checkLogin">
                         <div>
                             <span>Email Address<label>*</label></span>
                             <input type="text" id="email" name="email"> 
@@ -41,7 +41,6 @@ $(function() {
                             <span>Password<label>*</label></span>
                             <input type="password" id="password" name="password"> 
                         </div>
-                        <a class="forgot" href="#">Forgot Your Password?</a>
                         <input type="submit" value="Login">
                     </form>
 <!--                <form role="form" id="form">

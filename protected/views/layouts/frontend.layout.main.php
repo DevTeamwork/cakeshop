@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-- Custom Theme files -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <!----webfonts--->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,800,400,600' rel='stylesheet' type='text/css'>
+<!--        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700,800,400,600' rel='stylesheet' type='text/css'>-->
     <!---//webfonts--->
     
          <?php
@@ -41,6 +41,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         
         ?>
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+        <script type="text/javascript">
+            $(function() {
+               <?php if(Yii::app()->session['error_login'] == 'Y') : ?>
+                   alert('อีเมล์หรือรหัสผ่านไม่ถูกต้องกรุณาลองใหม่อีกครั้ง');
+                   <?php Yii::app()->session['error_login'] = null; ?>
+                <?php endif; ?>
+            });
+            </script>
 </head>
 <body>
     <!-- container -->
@@ -49,9 +58,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container">
             <div class="top-header-left">
                 <ul>
-                    <li><a href="myaccount.html">ข้อมูลส่วนตัว</a></li>
+                    <?php if(!empty(Yii::app()->session["user_id"])) : ?>
+                    <li><a href=""><?php echo Yii::app()->session["username"]; ?></a></li>
+                    <li><a href="">ข้อมูลส่วนตัว</a></li>
+                    <li><a href="index.php?r=frontend/logout">ออกจากระบบ</a></li>
+                    <?php else : ?>
                     <li><a href="index.php?r=frontend/login">เข้าสู่ระบบ</a></li>
                     <li><a href="index.php?r=frontend/Register">สมัครสมาชิก</a></li>
+                    <?php endif; ?>
                     <div class="clearfix"> </div>
                 </ul>
             </div>

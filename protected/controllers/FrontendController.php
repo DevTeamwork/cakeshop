@@ -36,38 +36,63 @@ class FrontendController extends Controller {
     
     public function actionCheckLogin(){
         if (!empty($_POST)) {
-//            print_r($_POST);                 
-//            if (empty($_POST['email'])) {
-//                $model = new Category();
-//            } else {
-//                $model = Category::model()->findByPk($_POST['category_id']);
-//            }
-
-//            $model->name = $_POST['name'];
-//            $result = $model->save();
-                        $query = 'SELECT u. *
-                    FROM  `users` u
-                    WHERE u.username =  "' . $_POST['email'] . '"
-                    AND u.password =  "' . $_POST['password'] . '"';
-//            print_r($query);
-             //md5($password)
+            $query = 'SELECT *
+                FROM users 
+                WHERE email =  "' . $_POST['email'] . '"
+                AND password =  "' . $_POST['password'] . '"';
             $user = Yii::app()->db->createCommand($query)->queryRow();
             
-            Yii::app()->session["user_id"] = $user["user_id"]; 
-            Yii::app()->session["username"] = $user["username"];
-            Yii::app()->session["role"] = $user["role"];
+            var_dump($user);
+            if ($user) {
+                Yii::app()->session["user_id"] = $user["user_id"]; 
+                Yii::app()->session["username"] = $user["username"];
+                Yii::app()->session["role"] = $user["rote"];
+            } else {
+                Yii::app()->session['error_login'] = 'Y';
+            }
 //            if($_POST['email'] == "admin"){
 //                $result = "admin";
 //            }else{             
 //                $result = "user";
 //            }
-            echo CJSON::encode($user);
-//            echo Yii::app()->session["user_id"];
+            //echo CJSON::encode($user);
+            //echo Yii::app()->session["user_id"];
         }
+        //var_dump($_POST)
+        //;
+        
+        $this->redirect('index.php?r=frontend');
     }
     
     public function actionRegister(){
         $this->render('register');
+    }
+    
+    public function actionSaveRegister() {
+        if (!empty($_POST)) {
+            $user = new Users();
+            $user->firstname = $_POST['firstname'];
+            $user->lastname = $_POST['lastname'];
+            $user->email = $_POST['email'];
+            $user->username = $_POST['username'];
+            $user->password = $_POST['password'];
+            $user->rote = 'cust';
+            $user->active = 'y';
+            $user->save();
+            //echo "save user";
+            //var_dump($user->getErrors());
+            //var_dump($user);
+        }
+        
+        $this->redirect('index.php?r=frontend');
+    }
+    
+    public function actionLogout() {
+        Yii::app()->session["user_id"] = null; 
+        Yii::app()->session["username"] = null;
+        Yii::app()->session["role"] = null;
+        
+        $this->redirect('index.php?r=frontend');
     }
     
 }
