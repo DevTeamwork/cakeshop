@@ -14,6 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!--<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"></script>-->
         <!-- Custom Theme files -->
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/frontend/style.css" rel='stylesheet' type='text/css' />
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/jquery-ui/jquery-ui.css" rel='stylesheet' type='text/css' />
         <!-- Custom Theme files -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <!----webfonts--->
@@ -35,7 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 //        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/dataTables/jquery.dataTables.js");
 //        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/dataTables/dataTables.bootstrap.js");
 //        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/sb_admin/js/plugins/dataTables/dataTables.bootstrap.js");
-//        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/scripts/cakeshop.product.script.js");
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/jquery-ui/jquery-ui.js");
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl . "/scripts/cakeshop.frontend.script.js");
         
         ?>

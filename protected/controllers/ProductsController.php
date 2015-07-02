@@ -41,6 +41,7 @@ class ProductsController extends Controller {
             }
 
             $model->name = $_POST['name'];
+            $model->photo = $_POST['photo'];
             $result = $model->save();
 
             echo $result;
@@ -86,6 +87,7 @@ class ProductsController extends Controller {
             $model->user_id = $_POST['user_id'];
             $model->category_id = $_POST['category_id'];
             $model->size = $_POST['size'];
+            $model->photo = $_POST['photo'];
             $result = $model->save();
 
             echo $result;
@@ -97,6 +99,53 @@ class ProductsController extends Controller {
         echo 1;
     }
     
+    public function actionUploadPhoto() {
+//       echo $_POST['image']; 
+        if (!empty($_POST)) {
+            $base64img = $_POST['image'];
+//       print_r($_POST);
+            define('UPLOAD_DIR', 'C:\\AppServ\\www\\cakeshop\\images\\products');
+            if (!file_exists(UPLOAD_DIR)) {
+                mkdir(UPLOAD_DIR);
+            }
+            
+            $data = base64_decode(str_replace('data:image/jpeg;base64,', '', $base64img));
+            $file = 'product'.uniqid(). '.jpeg';
+            file_put_contents(UPLOAD_DIR . $file, $data);
+
+            ini_set('memory_limit','500M');
+            $img = Yii::app()->simpleImage->load(UPLOAD_DIR .$file);
+            $img->resizeToWidth(960);
+    //        $img->resize(180,280);
+            $img->save('images/products/'.$file); 
+//        print_r($file);
+          echo Yii::app()->request->baseUrl . '/images/products/' . $file;
+        }
+    }
+    
+    public function actionUploadCategoryPhoto() {
+//       echo $_POST['image']; 
+        if (!empty($_POST)) {
+            $base64img = $_POST['image'];
+//       print_r($_POST);
+            define('UPLOAD_DIR', 'C:\\AppServ\\www\\cakeshop\\images\\categorys');
+            if (!file_exists(UPLOAD_DIR)) {
+                mkdir(UPLOAD_DIR);
+            }
+            
+            $data = base64_decode(str_replace('data:image/jpeg;base64,', '', $base64img));
+            $file = 'product'.uniqid(). '.jpeg';
+            file_put_contents(UPLOAD_DIR . $file, $data);
+
+            ini_set('memory_limit','500M');
+            $img = Yii::app()->simpleImage->load(UPLOAD_DIR .$file);
+            $img->resizeToWidth(960);
+    //        $img->resize(180,280);
+            $img->save('images/categorys/'.$file); 
+//        print_r($file);
+          echo Yii::app()->request->baseUrl . '/images/categorys/' . $file;
+        }
+    }
 
 
     // Uncomment the following methods and override them if needed

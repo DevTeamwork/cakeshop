@@ -5,6 +5,7 @@
         <group>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/C:/AppServ/www/cakeshop/protected/views/banks/index.php</file>
             <file>file:/C:/AppServ/www/cakeshop/protected/views/layouts/cakeshop.site.main.php</file>
             <file>file:/C:/AppServ/www/cakeshop/protected/views/reports/comfirmPayment.php</file>
@@ -18,6 +19,9 @@
 =======
 =======
 >>>>>>> origin/master
+=======
+            <file>file:/C:/xampp/htdocs/cakeshop/protected/views/layouts/frontend.layout.main.php</file>
+>>>>>>> origin/master
             <file>file:/C:/xampp/htdocs/cakeshop/css/frontend/style.css</file>
             <file>file:/C:/xampp/htdocs/cakeshop/protected/views/frontend/customize_cake.php</file>
             <file>file:/C:/xampp/htdocs/cakeshop/protected/controllers/FrontendController.php</file>
@@ -25,8 +29,13 @@
             <file>file:/C:/xampp/htdocs/cakeshop/protected/views/frontend/products.php</file>
             <file>file:/C:/xampp/htdocs/cakeshop/protected/views/cart/show_order_cart.php</file>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/master
 =======
+>>>>>>> origin/master
+=======
+            <file>file:/C:/xampp/htdocs/cakeshop/protected/controllers/CartController.php</file>
+            <file>file:/C:/xampp/htdocs/cakeshop/protected/views/cart/save_order_result.php</file>
 >>>>>>> origin/master
         </group>
     </open-files>

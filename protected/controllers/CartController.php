@@ -99,10 +99,14 @@ class CartController extends Controller {
         if (!empty($_POST)) {
             $customer_id = $_POST['customer_id'];
             $my_cart = Yii::app()->session['my_cart'];
+            $send_date_arr = explode('/', $_POST['send_date']);
+            $send_date = $send_date_arr[2] . '-' . $send_date_arr[0] . '-' . $send_date_arr[1];
+            
 
             $order = new Order();
             $order->customer_id = $customer_id;
             $order->order_status = 0;
+            $order->send_date = $send_date;
             if ($order->save()) {
                 for ($i = 0; $i < count($my_cart); $i++) {
                     $order_detail = new OrderDetail();

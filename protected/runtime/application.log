@@ -1150,3 +1150,90 @@ HTTP_REFERER=http://localhost/cakeshop/index.php?r=frontend/products
 =======
 >>>>>>> origin/master
 ---
+2015/06/28 10:22:40 [error] [php] Undefined variable: send_date (C:\xampp\htdocs\cakeshop\protected\controllers\CartController.php:103)
+Stack trace:
+#0 C:\xampp\htdocs\cakeshop\framework\web\CController.php(286): CartController->runAction()
+#1 C:\xampp\htdocs\cakeshop\framework\web\CController.php(265): CartController->runActionWithFilters()
+#2 C:\xampp\htdocs\cakeshop\framework\web\CWebApplication.php(282): CartController->run()
+#3 C:\xampp\htdocs\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=cart/saveOrder
+in C:\xampp\htdocs\cakeshop\protected\controllers\CartController.php (103)
+in C:\xampp\htdocs\cakeshop\index.php (13)
+2015/06/28 19:01:10 [error] [exception.CException] exception 'CException' with message 'Property "Products.bank_id" is not defined.' in C:\AppServ\www\cakeshop\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(145): CComponent->__get('bank_id')
+#1 C:\AppServ\www\cakeshop\framework\base\CModel.php(596): CActiveRecord->__get('bank_id')
+#2 C:\AppServ\www\cakeshop\protected\views\products\add.php(228): CModel->offsetGet('bank_id')
+#3 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(126): require('C:\AppServ\www\...')
+#4 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\AppServ\www\...', Array, true)
+#5 C:\AppServ\www\cakeshop\framework\web\CController.php(869): CBaseController->renderFile('C:\AppServ\www\...', Array, true)
+#6 C:\AppServ\www\cakeshop\framework\web\CController.php(782): CController->renderPartial('add', Array, true)
+#7 C:\AppServ\www\cakeshop\protected\controllers\ProductsController.php(21): CController->render('add', Array)
+#8 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ProductsController->actionAdd()
+#9 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('add')
+#13 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Products/add')
+#14 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/cakeshop/index.php?r=Products/add
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Products/Category
+---
+2015/06/28 19:48:42 [error] [exception.CException] exception 'CException' with message 'Property "Category.bank_id" is not defined.' in C:\AppServ\www\cakeshop\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(145): CComponent->__get('bank_id')
+#1 C:\AppServ\www\cakeshop\framework\base\CModel.php(596): CActiveRecord->__get('bank_id')
+#2 C:\AppServ\www\cakeshop\protected\views\products\category.php(202): CModel->offsetGet('bank_id')
+#3 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(126): require('C:\AppServ\www\...')
+#4 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\AppServ\www\...', Array, true)
+#5 C:\AppServ\www\cakeshop\framework\web\CController.php(869): CBaseController->renderFile('C:\AppServ\www\...', Array, true)
+#6 C:\AppServ\www\cakeshop\framework\web\CController.php(782): CController->renderPartial('category', Array, true)
+#7 C:\AppServ\www\cakeshop\protected\controllers\ProductsController.php(29): CController->render('category', Array)
+#8 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ProductsController->actionCategory()
+#9 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('Category')
+#13 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Products/Catego...')
+#14 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/cakeshop/index.php?r=Products/Category
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Products/Bestsellers
+---
+2015/06/28 20:10:35 [error] [exception.CException] exception 'CException' with message 'Property "Order.send_date" is not defined.' in C:\AppServ\www\cakeshop\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(161): CComponent->__set('send_date', '2015-06-27')
+#1 C:\AppServ\www\cakeshop\protected\controllers\CartController.php(109): CActiveRecord->__set('send_date', '2015-06-27')
+#2 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): CartController->actionSaveOrder()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('saveOrder')
+#7 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('cart/saveOrder')
+#8 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/cakeshop/index.php?r=cart/saveOrder
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=cart/showOrderCart
+---
+2015/06/28 20:11:17 [error] [exception.CException] exception 'CException' with message 'Property "Order.send_date" is not defined.' in C:\AppServ\www\cakeshop\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(161): CComponent->__set('send_date', '2015-06-27')
+#1 C:\AppServ\www\cakeshop\protected\controllers\CartController.php(109): CActiveRecord->__set('send_date', '2015-06-27')
+#2 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): CartController->actionSaveOrder()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('saveOrder')
+#7 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('cart/saveOrder')
+#8 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/cakeshop/index.php?r=cart/saveOrder
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=cart/showOrderCart
+---
