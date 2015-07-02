@@ -14,16 +14,17 @@
 class CartController extends Controller {
 
     public $layout = '//layouts/frontend.layout.main';
-
-    public function actionAddToCart($product_id) {
+    
+    public function actionAddToCart($product_id, $greeting) {
 
         $product = Products::model()->findByPk($product_id);
-
+        
         $item = array(
             'product_id' => $product['product_id'],
             'product_name' => $product['name'],
             'product_qty' => 1,
-            'product_price' => $product['price']
+            'product_price' => $product['price'],
+            'greeting_text' => $greeting
         );
 
         $session['my_cart'] = array();
@@ -33,7 +34,6 @@ class CartController extends Controller {
             $session[] = $item;
             Yii::app()->session['my_cart'] = $session;
         } else {
-
             $session = Yii::app()->session['my_cart'];
 
             $is_duplicate = false;
@@ -91,7 +91,8 @@ class CartController extends Controller {
     }
     
     public function actionShowOrderCart() {
-        $customer = Users::model()->findByPk(3);
+        $user_id = Yii::app()->session["user_id"];
+        $customer = Users::model()->findByPk($user_id);
         $this->render('show_order_cart', array('customer' => $customer));
     }
     
@@ -102,7 +103,6 @@ class CartController extends Controller {
             $send_date_arr = explode('/', $_POST['send_date']);
             $send_date = $send_date_arr[2] . '-' . $send_date_arr[0] . '-' . $send_date_arr[1];
             
-
             $order = new Order();
             $order->customer_id = $customer_id;
             $order->order_status = 0;
@@ -114,6 +114,7 @@ class CartController extends Controller {
                     $order_detail->product_id = $my_cart[$i]['product_id'];
                     $order_detail->order_qty = $my_cart[$i]['product_qty'];
                     $order_detail->product_price = $my_cart[$i]['product_price'];
+                    $order_detail->greeting_text = $my_cart[$i]['greeting_text'];
                     $order_detail->save();
                 }
                 Yii::app()->session['my_cart'] = null;

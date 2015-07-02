@@ -6,9 +6,10 @@
  * The followings are the available columns in table 'order_detail':
  * @property integer $order_detail_id
  * @property integer $order_id
- * @property integer $product_id
  * @property integer $order_qty
  * @property double $product_price
+ * @property integer $product_id
+ * @property string $greeting_text
  *
  * The followings are the available model relations:
  * @property Order $order
@@ -27,19 +28,20 @@ class OrderDetail extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-//	public function rules()
-//	{
-//		// NOTE: you should only define rules for those attributes that
-//		// will receive user inputs.
-//		return array(
-//			array('order_id, product_id, order_qty, product_price', 'required'),
-//			//array('order_id, product_id, order_qty', 'numerical', 'integerOnly'=>true),
-//			array('product_price', 'numerical'),
-//			// The following rule is used by search().
-//			// @todo Please remove those attributes that should not be searched.
-//			array('order_detail_id, order_id, product_id, order_qty, product_price', 'safe', 'on'=>'search'),
-//		);
-//	}
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('order_id, order_qty, product_price, product_id, greeting_text', 'required'),
+			array('order_id, order_qty, product_id', 'numerical', 'integerOnly'=>true),
+			array('product_price', 'numerical'),
+			array('greeting_text', 'length', 'max'=>255),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('order_detail_id, order_id, order_qty, product_price, product_id, greeting_text', 'safe', 'on'=>'search'),
+		);
+	}
 
 	/**
 	 * @return array relational rules.
@@ -62,9 +64,10 @@ class OrderDetail extends CActiveRecord
 		return array(
 			'order_detail_id' => 'Order Detail',
 			'order_id' => 'Order',
-			'product_id' => 'Product',
 			'order_qty' => 'Order Qty',
 			'product_price' => 'Product Price',
+			'product_id' => 'Product',
+			'greeting_text' => 'Greeting Text',
 		);
 	}
 
@@ -88,9 +91,10 @@ class OrderDetail extends CActiveRecord
 
 		$criteria->compare('order_detail_id',$this->order_detail_id);
 		$criteria->compare('order_id',$this->order_id);
-		$criteria->compare('product_id',$this->product_id);
 		$criteria->compare('order_qty',$this->order_qty);
 		$criteria->compare('product_price',$this->product_price);
+		$criteria->compare('product_id',$this->product_id);
+		$criteria->compare('greeting_text',$this->greeting_text,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

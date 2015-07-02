@@ -105,7 +105,14 @@
             Basic Form Elements
         </div>-->
     <div class="panel-body">
-        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">
+                <label>รูป</label>
+                <img class="img-responsive" id="image_avatar" src="./images/base/image.png">
+                <div class="change-image btn btn-outline btn-primary" >
+                    เปลี่ยนรูป
+                    <input type="file" accept="image/jpeg" id="change_avatar">
+                </div>
+        </div>
         <div class="col-xs-6">       <form role="form" id="form">
                 <input type="hidden" id="user_id" name="user_id" value="1"/>
                 <input type="hidden" id="product_id" name="product_id" value="0"/>

@@ -208,10 +208,14 @@
         </div>
         
         <div align="center">
-            <input type="button" class="myButton" onclick="window.location.href='index.php?r=frontend/products';" value="ซื้อสินค้าต่อ">
+            <input type="button" class="myButton" onclick="window.location.href='index.php?r=frontend/products';" value="เลือกซื้อสินค้าต่อ">
             <?php if (count($my_cart) > 0) : ?>
-            <button type="submit" class="btnCalculate">คำนวนใหม่</button>
-            <input type="button" class="btnBuy" onclick="window.location.href='index.php?r=cart/showOrderCart';" value="ยืนยันการสั่งซื้อ">
+                <button type="submit" class="btnCalculate">คำนวนใหม่</button>
+                <?php if(!empty(Yii::app()->session["user_id"])) : ?>
+                <input type="button" class="btnBuy" onclick="window.location.href='index.php?r=cart/showOrderCart';" value="ยืนยันการสั่งซื้อ">
+                <?php else : ?>
+                กรุณา <a style="color: #468ccf;" href="index.php?r=frontend/login">เข้าสู่ระบบ</a> ก่อนการสั่งซื้อสินค้า
+                <?php endif; ?>
             <?php endif; ?>
         </div>
        

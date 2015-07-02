@@ -17,7 +17,7 @@
                             <p>ราคา <?php echo $product['price']; ?> บาท</p>
                         </div>
                         <a href="index.php?r=Frontend/customizeCake&product_id=<?php echo $product['product_id']; ?>">เลือกหน้าเค้ก</a>&nbsp;
-                        <a href="index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>">
+                        <a href="index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=">
                             <button class="add2cart">
                                 <span>| Add to Cart</span>
                             </button>

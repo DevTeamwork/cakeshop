@@ -124,12 +124,35 @@
     $(function() {
         $('#send_date').datepicker();
     });
+    
+    function validateForm() {
+        var txt = $('#send_date').val();
+        var tel = $('#customer_tel').val();
+        var address = $('#customer_address').val();
+        
+        if (tel == "") {
+            alert('กรุณาป้อนข้อมูลเบอร์โทร');
+            return false;
+        }
+        
+        if (address == "") {
+            alert('กรุณาป้อนข้อมูลที่อยู่');
+            return false;
+        }
+        
+        if (txt == "") {
+            alert('กรุณาเลือกวันที่ส่งสินค้า');
+            return false;
+        }
+        
+        return true;
+    }
 </script>
 
 <div class="biseller-info">
     <div class="container">
         
-        <form method="post" action="index.php?r=cart/saveOrder">
+        <form method="post" action="index.php?r=cart/saveOrder" onsubmit="return validateForm()">
         <div class="col span_2_of_3">
             <div class="contact-form">
                 <p class="header-title">ข้อมูลลูกค้า</p>
@@ -141,12 +164,12 @@
 
                  <div>
                     <span><label>เบอร์โทร</label></span>
-                    <span><input name="customer_tel" type="text" class="textbox" value="<?php echo $customer->tel; ?>"></span>
+                    <span><input id="customer_tel" name="customer_tel" type="text" class="textbox" value="<?php echo $customer->tel; ?>"></span>
                 </div>
 
                 <div>
                     <span><label>ที่อยู่</label></span>
-                    <span><textarea name="customer_address"><?php echo $customer->address; ?></textarea></span>
+                    <span><textarea id="customer_address" name="customer_address"><?php echo $customer->address; ?></textarea></span>
                 </div>
                 
                 <div>

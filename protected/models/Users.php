@@ -20,6 +20,9 @@
  * @property string $active
  * @property string $latitude
  * @property string $longtitude
+ *
+ * The followings are the available model relations:
+ * @property Order[] $orders
  */
 class Users extends CActiveRecord
 {
@@ -39,17 +42,17 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email, firstname, lastname, nickname, birthday, address, tel, identification_card, image_profile, rote, active, latitude, longtitude', 'required'),
-			array('username, password, firstname, lastname, nickname', 'length', 'max'=>50),
-			array('email', 'length', 'max'=>100),
-			array('address, image_profile', 'length', 'max'=>255),
-			array('tel, latitude, longtitude', 'length', 'max'=>15),
-			array('identification_card', 'length', 'max'=>13),
-			array('rote', 'length', 'max'=>5),
+			array('username, password, email, firstname, lastname, rote, active', 'required'),
+			//array('username, password, firstname, lastname', 'length', 'max'=>50),
+			//array('email', 'length', 'max'=>20),
+			//array('address, image_profile', 'length', 'max'=>255),
+			//array('tel, latitude, longtitude', 'length', 'max'=>15),
+			//array('identification_card', 'length', 'max'=>13),
+			//array('rote', 'length', 'max'=>5),
 			array('active', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('user_id, username, password, email, firstname, lastname, nickname, birthday, address, tel, identification_card, image_profile, rote, active, latitude, longtitude', 'safe', 'on'=>'search'),
+			//array('user_id, username, password, email, firstname, lastname, nickname, birthday, address, tel, identification_card, image_profile, rote, active, latitude, longtitude', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,6 +64,7 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'orders' => array(self::HAS_MANY, 'Order', 'customer_id'),
 		);
 	}
 
