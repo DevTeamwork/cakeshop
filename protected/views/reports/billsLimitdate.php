@@ -119,7 +119,7 @@
                                 <button class="edit" data-title="แจ้งเตือน" rel="tooltip" 
                                         data-id="<?php echo $id; ?>" 
                                         >
-                                    <i class="glyphicon glyphicon-ok"></i></button>
+                                    <i class="fa fa-paper-plane"></i></button>
                             </div> 
                         </td>
                     <?php endforeach; ?>
