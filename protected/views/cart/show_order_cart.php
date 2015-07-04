@@ -122,7 +122,7 @@
 </style>
 <script type="text/javascript">
     $(function() {
-        $('#send_date').datepicker();
+        
     });
     
     function validateForm() {
@@ -139,12 +139,7 @@
             alert('กรุณาป้อนข้อมูลที่อยู่');
             return false;
         }
-        
-        if (txt == "") {
-            alert('กรุณาเลือกวันที่ส่งสินค้า');
-            return false;
-        }
-        
+
         return true;
     }
 </script>
@@ -172,10 +167,7 @@
                     <span><textarea id="customer_address" name="customer_address"><?php echo $customer->address; ?></textarea></span>
                 </div>
                 
-                <div>
-                    <span><label>วันที่ส่งสินค้า</label></span>
-                    <span><input type="text" name="send_date" id="send_date"></span>
-                </div>
+                
                 <input type="hidden" name="customer_id" value="<?php echo $customer->user_id; ?>">
              </div>
         </div>

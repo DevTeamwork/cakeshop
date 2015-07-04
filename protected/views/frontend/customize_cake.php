@@ -21,7 +21,7 @@
 </style>
 <script type="text/javascript">
     $(function() {
-        
+        $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
     });
     
     function changeCake(url) {
@@ -30,7 +30,8 @@
     
     function redirectToCart() {
         var greeting = $('#greeting_text').val();
-        window.location.href = 'index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=' + greeting;
+        var send_date = $('#datepicker').val();
+        window.location.href = 'index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=' + greeting + '&send_date=' + send_date;
     }
 </script>
 <div class="biseller-info">
@@ -38,7 +39,7 @@
         <h1>ปรับแต่งหน้าเค้ก</h1>
         
         <div id="panel-left" style="text-align: center;">
-            <img id="main-cake" src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/11.jpg" width="350" />
+            <img id="main-cake" src="<?php echo $product['photo_emty']; ?>" width="350" />
             <div class="biseller-name" style="margin-top: 10px;">
                 <h4><?php echo $product['name']; ?></h4>
                 <p>ราคา <?php echo $product['price']; ?> บาท</p>
@@ -52,6 +53,20 @@
         
         <div id="panel-right">
             <table width="100%" id="select-cake">
+                <?php $i = 1; ?>
+                <tr>
+                <?php foreach ($toppings as $top) : ?>
+                    <td>
+                        <div><?php echo $top; ?></div>
+                        <div></div>
+                    </td>
+                    <?php if ($i % 4 == 0) : ?>
+                    </tr><tr>
+                    <?php $i++; endif; ?>
+                
+                <?php endforeach; ?>
+                </tr>
+                
                 <tr>
                     <td><img onclick="changeCake(this.src)" src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/11.jpg" width="100px" /></td>
                     <td><img onclick="changeCake(this.src)" src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/cake/c2.jpg" width="100px"></td>
@@ -69,6 +84,9 @@
                 <h4>คำอวยพร</h4>
                 <textarea id="greeting_text"></textarea>
             </div>
+            
+            <div>วันที่ส่งสินค้า</div>
+            <div id="datepicker"></div>
         </div>
         
     </div>

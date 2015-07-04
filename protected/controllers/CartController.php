@@ -15,7 +15,7 @@ class CartController extends Controller {
 
     public $layout = '//layouts/frontend.layout.main';
     
-    public function actionAddToCart($product_id, $greeting) {
+    public function actionAddToCart($product_id, $greeting, $send_date) {
 
         $product = Products::model()->findByPk($product_id);
         
@@ -24,7 +24,8 @@ class CartController extends Controller {
             'product_name' => $product['name'],
             'product_qty' => 1,
             'product_price' => $product['price'],
-            'greeting_text' => $greeting
+            'greeting_text' => $greeting,
+            'send_date' => $send_date
         );
 
         $session['my_cart'] = array();
@@ -100,13 +101,13 @@ class CartController extends Controller {
         if (!empty($_POST)) {
             $customer_id = $_POST['customer_id'];
             $my_cart = Yii::app()->session['my_cart'];
-            $send_date_arr = explode('/', $_POST['send_date']);
-            $send_date = $send_date_arr[2] . '-' . $send_date_arr[0] . '-' . $send_date_arr[1];
             
             $order = new Order();
             $order->customer_id = $customer_id;
             $order->order_status = 0;
-            $order->send_date = $send_date;
+            $day = strtotime("+7 day");
+            $order->limit_date = date('Y-m-d', $day);
+            
             if ($order->save()) {
                 for ($i = 0; $i < count($my_cart); $i++) {
                     $order_detail = new OrderDetail();
@@ -115,15 +116,14 @@ class CartController extends Controller {
                     $order_detail->order_qty = $my_cart[$i]['product_qty'];
                     $order_detail->product_price = $my_cart[$i]['product_price'];
                     $order_detail->greeting_text = $my_cart[$i]['greeting_text'];
+                    $order_detail->send_date = $my_cart[$i]['send_date'];
                     $order_detail->save();
                 }
                 Yii::app()->session['my_cart'] = null;
                 $this->actionRenderResultPage();
+            } else {
+                print_r($order->getErrors());
             } 
-//            else {
-//                echo "cannot save";
-//                 var_dump($order->getErrors());
-//            }
         } else {
             echo "not post";
         }   

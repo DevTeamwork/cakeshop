@@ -120,20 +120,20 @@
                                 $sel = "";
                                 if($order_status == '0'){
                                     echo '<select>
-                                <option value="0" selected>ยังไม่สั่งซื้อ</option>
-                                <option value="1">สั่งซื้อแล้ว</option>
+                                <option value="0" selected>ยังไม่ยืนยันสั่งซื้อ</option>
+                                <option value="1">ยืนยันสั่งซื้อแล้ว</option>
                                 <option value="2">รอส่งสินค้า</option>
                             </select>';
                                 }else if($order_status == '1'){
                                     echo '<select>
-                                <option value="0">ยังไม่สั่งซื้อ</option>
-                                <option value="1" selected>สั่งซื้อแล้ว</option>
+                                <option value="0">ยังไม่ยืนยันสั่งซื้อ</option>
+                                <option value="1" selected>ยืนยันสั่งซื้อแล้ว</option>
                                 <option value="2">รอส่งสินค้า</option>
                             </select>';
                                 }else if($order_status == '2'){
                                     echo '<select>
-                                <option value="0">ยังไม่สั่งซื้อ</option>
-                                <option value="1">สั่งซื้อแล้ว</option>
+                                <option value="0">ยังไม่ยืนยันสั่งซื้อ</option>
+                                <option value="1">ยืนยันสั่งซื้อแล้ว</option>
                                 <option value="2" selected>รอส่งสินค้า</option>
                             </select>';
                                 }

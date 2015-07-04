@@ -10,6 +10,7 @@
  * @property double $product_price
  * @property integer $product_id
  * @property string $greeting_text
+ * @property string $send_date
  *
  * The followings are the available model relations:
  * @property Order $order
@@ -33,13 +34,13 @@ class OrderDetail extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('order_id, order_qty, product_price, product_id, greeting_text', 'required'),
+			//array('order_id, order_qty, product_price, product_id, greeting_text, send_date', 'required'),
 			array('order_id, order_qty, product_id', 'numerical', 'integerOnly'=>true),
 			array('product_price', 'numerical'),
 			array('greeting_text', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('order_detail_id, order_id, order_qty, product_price, product_id, greeting_text', 'safe', 'on'=>'search'),
+			array('order_detail_id, order_id, order_qty, product_price, product_id, greeting_text, send_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +69,7 @@ class OrderDetail extends CActiveRecord
 			'product_price' => 'Product Price',
 			'product_id' => 'Product',
 			'greeting_text' => 'Greeting Text',
+			'send_date' => 'Send Date',
 		);
 	}
 
@@ -95,6 +97,7 @@ class OrderDetail extends CActiveRecord
 		$criteria->compare('product_price',$this->product_price);
 		$criteria->compare('product_id',$this->product_id);
 		$criteria->compare('greeting_text',$this->greeting_text,true);
+		$criteria->compare('send_date',$this->send_date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

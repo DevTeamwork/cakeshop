@@ -1,17 +1,10 @@
 <script>
     $(function () {
-//        alert("asdf");
-        var page = $("#side-menu li#product");
-//        page.addClass("active");
+var page = $("#side-menu li#product");
         page.find("ul").first().addClass("nav nav-second-level collapse in");
         var ul = page.find("ul").first();
         ul.find("#add a").addClass("active");
         $('#side-menu').metisMenu();
-
-//        console.log($("#side-menu li#product").parent().html());
-//        CKEDITOR.disableAutoInline = false;
-//        $('#editor1').ckeditor(); // Use CKEDITOR.replace() if element is <textarea>.
-//        $('#editable').ckeditor(); // Use CKEDITOR.inline().
 
 
         $('#form').validate({
@@ -26,6 +19,7 @@
                 price: "กรุณากรอก ราคา"
             },
             submitHandler: function (e) {
+                console.log($("#form").serialize());
                 product_save($("#form").serialize());
             }
 
@@ -75,6 +69,7 @@
             var price = $(this).data().price;
             var category_id = $(this).data().category_id;
             var size = $(this).data().size;
+            var photo = $(this).data().photo;
 
             $("#product_id").val(id);
             $("#name").val(name);
@@ -83,11 +78,90 @@
             $("#price").val(price);
             $("#category_id").val(category_id);
             $("#size").val(size);
-
-//            alert("edit :"+size);
+            $('#image_avatar').attr("src", photo);
         });
+        
+        $("#change_avatar").change(function(event) {
+            var file_list = event.target.files;
+            console.log(file_list);
+
+            for (var i = 0, file; file = file_list[i]; i++) {
+                var sFileName = file.name;
+                var sFileExtension = sFileName.split('.')[sFileName.split('.').length - 1].toLowerCase();
+                var iFileSize = file.size;
+                var iConvert = (file.size / 10485760).toFixed(2);
+
+                if (!(sFileExtension === "pdf" || sFileExtension === "doc" || sFileExtension === "docx") || iFileSize > 10485760) {
+                    var reader = new FileReader();
+                    reader.onload = function(event) {
+                        $.ajax({
+                            url: 'index.php?r=Products/UploadPhoto',
+                            type: 'POST',
+                            data: {
+                                image: event.target.result,
+                            },
+                            success: function(data) {
+                                console.log(data);
+                                if (data != '-1') {
+                                    $('#image_avatar').attr("src", data);
+                                    $('#photo').val(data);
+                                }
+                            }
+                        });
+                    };
+                    reader.onerror = function(event) {
+                        alert("I AM ERROR: " + event.target.error.code);
+                    };
+                    reader.readAsDataURL(file_list[0]);
+
+                } else {
+                    alert('error!,แนะนำให้ใส่เป็นรูปนามสกุล .png');
+                }
+            }
+        });
+
+//        console.log($("#side-menu li#product").parent().html());
+//        CKEDITOR.disableAutoInline = false;
+//        $('#editor1').ckeditor(); // Use CKEDITOR.replace() if element is <textarea>.
+//        $('#editable').ckeditor(); // Use CKEDITOR.inline().
+
+
+//        $('#form').validate({
+//            rules: {
+//                title: "required",
+//                editor1: "required"
+//            },
+//            messages: {
+//                title: "กรุณากรอกชื่อผลงาน",
+//                editor1: "กรุณากรอกรายละเอียด"
+//            },
+//            submitHandler: function(form) {
+//                newsSave($("#form").serialize());
+//
+//            }
+//
+//        });
     });
 </script>
+<style>
+    .change-image{
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+    }
+    .change-image #change_avatar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+</style>
+
 <div class="row ">
     <div class="col-lg-12">
         <h1 class="page-header"><i class="fa fa-plus fa-fw"></i> เพิ่มสินค้าใหม่</h1>
@@ -98,24 +172,20 @@
     <li><a href="index.php?r=Products/index"><i class="fa fa-graduation-cap fa-fw"></i> ระบบสินค้า</a></li>
     <li class="active">เพิ่มสินค้าใหม่</li>                                        
 </ol>
-
-
 <div class="panel panel-default">
-    <!--    <div class="panel-heading">
-            Basic Form Elements
-        </div>-->
     <div class="panel-body">
         <div class="col-xs-6">
-                <label>รูป</label>
-                <img class="img-responsive" id="image_avatar" src="./images/base/image.png">
-                <div class="change-image btn btn-outline btn-primary" >
-                    เปลี่ยนรูป
-                    <input type="file" accept="image/jpeg" id="change_avatar">
-                </div>
+            <img class="img-responsive" id="image_avatar" src="images/base/image.png">
+            <div class="change-image btn btn-outline btn-primary" >
+                เปลี่ยนรูป
+                <input type="file" accept="image/jpeg" id="change_avatar">
+            </div>
         </div>
-        <div class="col-xs-6">       <form role="form" id="form">
+        <div class="col-xs-6">       
+            <form role="form" id="form">
                 <input type="hidden" id="user_id" name="user_id" value="1"/>
                 <input type="hidden" id="product_id" name="product_id" value="0"/>
+                <input type="hidden" id="photo" name="photo" />
                 <div class="form-group">
                     <label>ชื่อสินค้า</label>
                     <input class="form-control" id="name" name="name" placeholder="ชื่อสินค้า">
@@ -154,10 +224,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary">บันทึก</button>
                 <button type="reset" class="btn btn-warning">เคียร์ค่า</button>
-            </form></div>
-
+            </form>
+        </div>
         <hr>
-        <!-- /.row (nested) -->
         <table class="table table-condensed table-striped" id="table">
             <thead>
                 <tr>
@@ -180,6 +249,10 @@
                     $price = $model["price"];
                     $category_id = $model["category_id"];
                     $size = $model["size"];
+                    $photo = $model["photo"];
+                    if($photo == ""){
+                        $photo = "images/base/image.png";
+                    }
                     $row_index += 1;
                     ?>
                     <tr>
@@ -197,7 +270,8 @@
                                         data-price="<?php echo $price; ?>"
                                         data-size="<?php echo $size; ?>"
                                         data-discription="<?php echo $discription; ?>"
-                                        data-category_id="<?php echo $category_id; ?>">
+                                        data-category_id="<?php echo $category_id; ?>"
+                                        data-photo="<?php echo $photo; ?>">
                                     <i class="glyphicon glyphicon-edit"></i></button>
                                 <button class="delete" href="#" data-title="ลบ" rel="tooltip" data-id="<?php echo $id; ?>" data-name="<?php echo $name; ?>">
                                     <i class="glyphicon glyphicon-remove"></i></button>
@@ -209,5 +283,4 @@
             </tbody>
         </table>
     </div>
-    <!-- /.panel-body -->
 </div>

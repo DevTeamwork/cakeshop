@@ -1,10 +1,6 @@
 <script>
     $(function () {
-//        alert("asdf");
         var page = $("#side-menu li#bank");
-//        page.addClass("active");
-//        page.find("ul").first().addClass("nav nav-second-level collapse in");
-//        var ul = page.find("ul").first();
         page.find("a").addClass("active");
         $('#side-menu').metisMenu();
 
@@ -88,7 +84,7 @@
         
         $("#change_avatar").change(function(event) {
             var file_list = event.target.files;
-//            console.log(file_list);
+            console.log(file_list);
 
             for (var i = 0, file; file = file_list[i]; i++) {
                 var sFileName = file.name;
@@ -124,28 +120,6 @@
                 }
             }
         });
-
-//        console.log($("#side-menu li#product").parent().html());
-//        CKEDITOR.disableAutoInline = false;
-//        $('#editor1').ckeditor(); // Use CKEDITOR.replace() if element is <textarea>.
-//        $('#editable').ckeditor(); // Use CKEDITOR.inline().
-
-
-//        $('#form').validate({
-//            rules: {
-//                title: "required",
-//                editor1: "required"
-//            },
-//            messages: {
-//                title: "กรุณากรอกชื่อผลงาน",
-//                editor1: "กรุณากรอกรายละเอียด"
-//            },
-//            submitHandler: function(form) {
-//                newsSave($("#form").serialize());
-//
-//            }
-//
-//        });
     });
 </script>
 <style>

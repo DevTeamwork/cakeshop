@@ -116,20 +116,14 @@
                         <td style="width: 15%;"><?php echo $branch; ?></td> 
                         <td style="width: 15%;"><?php echo $account_no; ?></td> 
                         <td style="width: 15%;"><?php echo $account_name; ?></td> 
-<!--                        <td style="width: 15%;">
+                        <td style="width: 15%;">
                             <div class="btn-group" >
-                                <button class="edit" data-title="ลบ" rel="tooltip" 
+                                <button class="edit" data-title="แจ้งเตือน" rel="tooltip" 
                                         data-id="<?php echo $id; ?>" 
-                                        data-name="<?php echo $name; ?>"
-                                        data-branch="<?php echo $branch ?>"
-                                        data-account_no="<?php echo $account_no; ?>"
-                                        data-account_name="<?php echo $account_name; ?>"
                                         >
-                                    <i class="glyphicon glyphicon-edit"></i></button>
-                                <button class="delete" href="#" data-title="ลบ" rel="tooltip" data-id="<?php echo $id; ?>" data-name="<?php echo $name; ?>">
-                                    <i class="glyphicon glyphicon-remove"></i></button>
+                                    <i class="glyphicon glyphicon-ok"></i></button>
                             </div> 
-                        </td>-->
+                        </td>
                     <?php endforeach; ?>
                 </tr>
             </tbody>

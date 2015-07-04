@@ -8,7 +8,8 @@
 
                 <li>
                     <div class="biseller-column">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/11.jpg" alt="" class="veiw-img">
+                        <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/11.jpg" alt="" class="veiw-img">-->
+                        <img src="<?php echo $product['photo']; ?>" alt="" class="veiw-img">
                         <div class="veiw-img-mark">
                             <!--<a href="singlepage.html">Quick view</a>-->
                         </div>
@@ -17,11 +18,18 @@
                             <p>ราคา <?php echo $product['price']; ?> บาท</p>
                         </div>
                         <a href="index.php?r=Frontend/customizeCake&product_id=<?php echo $product['product_id']; ?>">เลือกหน้าเค้ก</a>&nbsp;
-                        <a href="index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=">
+                        
+<!--                        <a href="index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=">
                             <button class="add2cart">
                                 <span>| Add to Cart</span>
                             </button>
-                        </a>					
+                        </a>					-->
+                        
+                        <a href="index.php?r=Frontend/selectSendDate&product_id=<?php echo $product['product_id']; ?>">
+                            <button class="add2cart">
+                                <span>| Add to Cart</span>
+                            </button>
+                        </a>
                     </div>
                 </li>
 
