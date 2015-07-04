@@ -8,7 +8,8 @@
 
                 <li>
                     <div class="biseller-column">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/11.jpg" alt="" class="veiw-img">
+                        <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/11.jpg" alt="" class="veiw-img">-->
+                        <img src="<?php echo $product['photo']; ?>" alt="" class="veiw-img">
                         <div class="veiw-img-mark">
                             <!--<a href="singlepage.html">Quick view</a>-->
                         </div>
