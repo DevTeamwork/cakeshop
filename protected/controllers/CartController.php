@@ -105,7 +105,8 @@ class CartController extends Controller {
             $order = new Order();
             $order->customer_id = $customer_id;
             $order->order_status = 0;
-            $order->limit_date = date('Y-m-d');
+            $day = strtotime("+7 day");
+            $order->limit_date = date('Y-m-d', $day);
             
             if ($order->save()) {
                 for ($i = 0; $i < count($my_cart); $i++) {
