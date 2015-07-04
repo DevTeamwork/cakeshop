@@ -27,7 +27,14 @@ class FrontendController extends Controller {
     
     public function actionCustomizeCake($product_id) {
         $product = Products::model()->findByPk($product_id);
-        $this->render('customize_cake', array('product' => $product));
+        //$toppings = Toppings::model()->findByAttributes(array('product_id' => $product_id));
+        $topping_sql = "SELECT * FROM toppings WHERE product_id = '" . $product_id . "'";
+        $toppings = Yii::app()->db->createCommand($topping_sql)->queryRow();
+        
+        $this->render('customize_cake', array(
+            'product' => $product, 
+            'toppings' => $toppings
+        ));
     }
     
     public function actionLogin(){
@@ -42,7 +49,7 @@ class FrontendController extends Controller {
                 AND password =  "' . $_POST['password'] . '"';
             $user = Yii::app()->db->createCommand($query)->queryRow();
             
-            var_dump($user);
+           // var_dump($user);
             if ($user) {
                 Yii::app()->session["user_id"] = $user["user_id"]; 
                 Yii::app()->session["username"] = $user["username"];
@@ -50,16 +57,7 @@ class FrontendController extends Controller {
             } else {
                 Yii::app()->session['error_login'] = 'Y';
             }
-//            if($_POST['email'] == "admin"){
-//                $result = "admin";
-//            }else{             
-//                $result = "user";
-//            }
-            //echo CJSON::encode($user);
-            //echo Yii::app()->session["user_id"];
         }
-        //var_dump($_POST)
-        //;
         
         $this->redirect('index.php?r=frontend');
     }
@@ -79,11 +77,7 @@ class FrontendController extends Controller {
             $user->rote = 'cust';
             $user->active = 'y';
             $user->save();
-            //echo "save user";
-            //var_dump($user->getErrors());
-            //var_dump($user);
         }
-        
         $this->redirect('index.php?r=frontend');
     }
     
@@ -95,4 +89,8 @@ class FrontendController extends Controller {
         $this->redirect('index.php?r=frontend');
     }
     
+    public function actionSelectSendDate($product_id) {
+        $product = Products::model()->findByPk($product_id);
+        $this->render('select_send_date', array('product' => $product));
+    }
 }

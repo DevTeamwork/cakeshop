@@ -8,6 +8,7 @@
  * @property integer $customer_id
  * @property string $order_date
  * @property integer $order_status
+ * @property string $limit_date
  *
  * The followings are the available model relations:
  * @property Users $customer
@@ -31,11 +32,11 @@ class Order extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('customer_id, order_status', 'required'),
+			//array('customer_id, order_date, order_status, 'required'),
 			array('customer_id, order_status', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('order_id, customer_id, order_date, order_status', 'safe', 'on'=>'search'),
+			array('order_id, customer_id, order_date, order_status, limit_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,6 +63,7 @@ class Order extends CActiveRecord
 			'customer_id' => 'Customer',
 			'order_date' => 'Order Date',
 			'order_status' => 'Order Status',
+			'limit_date' => 'Limit Date',
 		);
 	}
 
@@ -87,6 +89,7 @@ class Order extends CActiveRecord
 		$criteria->compare('customer_id',$this->customer_id);
 		$criteria->compare('order_date',$this->order_date,true);
 		$criteria->compare('order_status',$this->order_status);
+		$criteria->compare('limit_date',$this->limit_date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

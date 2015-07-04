@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2015 at 11:20 AM
+-- Generation Time: Jul 04, 2015 at 09:56 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -59,36 +59,10 @@ CREATE TABLE IF NOT EXISTS `category` (
 --
 
 INSERT INTO `category` (`category_id`, `name`) VALUES
-(6, 'เครป'),
 (7, 'เครป'),
 (8, 'พาย'),
 (9, 'คุกกี้'),
-(10, 'พุดดิ้ง'),
-(11, 'มาการอง'),
-(12, 'บัตเตอร์'),
-(13, 'มูส'),
-(14, 'วุ้น'),
-(15, 'คัพเค้ก');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gallerys`
---
-
-CREATE TABLE IF NOT EXISTS `gallerys` (
-  `gallery_id` int(11) NOT NULL,
-  `image_path` varchar(255) NOT NULL,
-  `product_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `gallerys`
---
-
-INSERT INTO `gallerys` (`gallery_id`, `image_path`, `product_id`) VALUES
-(1, 'image2.png', 1),
-(2, 'image3.png', 1);
+(14, 'วุ้น');
 
 -- --------------------------------------------------------
 
@@ -121,55 +95,25 @@ CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `order_status` int(1) NOT NULL COMMENT '0 = not comfirm, 1 = confirmed, 2 = send'
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+  `order_status` int(1) NOT NULL COMMENT '0 = not comfirm, 1 = confirmed, 2 = send',
+  `limit_date` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`order_id`, `customer_id`, `order_date`, `order_status`) VALUES
-(10, 3, '2015-06-20 08:31:01', 0),
-(11, 3, '2015-06-20 08:31:14', 0),
-(12, 3, '2015-06-20 08:32:14', 0),
-(13, 3, '2015-06-20 08:33:32', 0),
-(14, 3, '2015-06-20 08:34:31', 0),
-(15, 3, '2015-06-20 08:39:26', 0),
-(16, 3, '2015-06-20 09:01:05', 0),
-(17, 3, '2015-06-20 09:01:29', 0),
-(18, 3, '2015-06-20 09:05:28', 0),
-(19, 3, '2015-06-20 09:06:15', 0),
-(20, 3, '2015-06-20 09:06:32', 0),
-(21, 3, '2015-06-20 09:06:41', 0),
-(22, 3, '2015-06-20 09:18:42', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
-
-CREATE TABLE IF NOT EXISTS `orders` (
-  `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `count` int(3) NOT NULL,
-  `create_date` date NOT NULL,
-  `create_time` time NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `bill_id` int(11) NOT NULL,
-  `greeting_word` varchar(255) DEFAULT NULL,
-  `font` varchar(100) DEFAULT NULL,
-  `color` varchar(10) DEFAULT NULL,
-  `discription` text,
-  `create_by` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`order_id`, `product_id`, `count`, `create_date`, `create_time`, `user_id`, `bill_id`, `greeting_word`, `font`, `color`, `discription`, `create_by`) VALUES
-(1, 1, 1, '2015-04-19', '23:54:00', 1, 1, '็Happy Happy', NULL, NULL, NULL, 1);
+INSERT INTO `order` (`order_id`, `customer_id`, `order_date`, `order_status`, `limit_date`) VALUES
+(32, 3, '2015-07-04 06:31:13', 0, '0000-00-00'),
+(33, 3, '2015-07-04 06:33:34', 0, '0000-00-00'),
+(34, 3, '2015-07-04 06:48:09', 0, '0000-00-00'),
+(35, 3, '2015-07-04 06:48:29', 0, '0000-00-00'),
+(36, 3, '2015-07-04 06:49:30', 0, '0000-00-00'),
+(37, 3, '2015-07-04 06:52:18', 0, '0000-00-00'),
+(38, 3, '2015-07-04 06:54:51', 0, '0000-00-00'),
+(39, 3, '2015-07-04 06:55:14', 0, '0000-00-00'),
+(40, 3, '2015-07-04 06:55:29', 0, '0000-00-00'),
+(41, 3, '2015-07-04 06:56:17', 0, '2015-07-04');
 
 -- --------------------------------------------------------
 
@@ -182,27 +126,31 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `order_id` int(11) NOT NULL,
   `order_qty` int(11) NOT NULL,
   `product_price` float NOT NULL,
-  `product_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+  `product_id` int(11) NOT NULL,
+  `greeting_text` varchar(255) NOT NULL,
+  `send_date` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `order_detail`
 --
 
-INSERT INTO `order_detail` (`order_detail_id`, `order_id`, `order_qty`, `product_price`, `product_id`) VALUES
-(12, 10, 5, 300, 8),
-(13, 10, 2, 300, 9),
-(14, 11, 5, 300, 8),
-(15, 11, 3, 300, 9),
-(16, 12, 5, 300, 8),
-(17, 12, 3, 300, 9),
-(18, 13, 1, 300, 8),
-(19, 14, 1, 300, 8),
-(20, 15, 1, 300, 8),
-(21, 16, 1, 300, 9),
-(22, 16, 1, 300, 8),
-(23, 18, 12, 300, 9),
-(24, 22, 15, 300, 9);
+INSERT INTO `order_detail` (`order_detail_id`, `order_id`, `order_qty`, `product_price`, `product_id`, `greeting_text`, `send_date`) VALUES
+(29, 36, 1, 350, 1, '', '2015-07-04'),
+(30, 38, 1, 350, 1, '', '2015-07-04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_topping`
+--
+
+CREATE TABLE IF NOT EXISTS `order_topping` (
+  `order_topping_id` int(11) NOT NULL,
+  `order_detail_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `topping_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -218,8 +166,16 @@ CREATE TABLE IF NOT EXISTS `payments_comfirm` (
   `create_date` date NOT NULL,
   `create_time` time NOT NULL,
   `user_id` int(11) NOT NULL,
-  `bill_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `bill_id` int(11) NOT NULL,
+  `price` varchar(10) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `payments_comfirm`
+--
+
+INSERT INTO `payments_comfirm` (`id`, `bank_id`, `bank_name`, `bank_account`, `create_date`, `create_time`, `user_id`, `bill_id`, `price`) VALUES
+(1, '1', '23434', 'agkasit tontan', '2015-07-03', '02:29:23', 3, 10, '2000');
 
 -- --------------------------------------------------------
 
@@ -237,16 +193,41 @@ CREATE TABLE IF NOT EXISTS `products` (
   `create_time` time NOT NULL,
   `user_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `size` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+  `size` varchar(10) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `photo_emty` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `name`, `discription`, `time`, `price`, `create_date`, `create_time`, `user_id`, `category_id`, `size`) VALUES
-(8, 'เค้กช็อกโกแลต โอริโอ้ edit', 'เค้กช็อกโกแลต โอริโอ้ edit', 1, 300, '2015-04-03', '11:00:09', 1, 2, '2'),
-(9, 'เค้กช็อกโกแลต โอริโอ้ 2', 'เค้กช็อกโกแลต โอริโอ้ 2', 2, 300, '2015-04-06', '22:21:51', 1, 1, '2');
+INSERT INTO `products` (`product_id`, `name`, `discription`, `time`, `price`, `create_date`, `create_time`, `user_id`, `category_id`, `size`, `photo`, `photo_emty`) VALUES
+(1, 'เค้กทั่วไป', 'เค้กทั่วไป', 1, 350, '2015-07-03', '19:25:00', 1, 0, '2', '/cakeshop/images/products/general.png', '/cakeshop/images/products/general_burned.png'),
+(2, 'เค้กผลไม้', 'เค้กผลไม้', 2, 300, '2015-04-06', '22:21:51', 1, 1, '2', '/cakeshop/images/products/fruit.png', '/cakeshop/images/products/fruit_burned.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `toppings`
+--
+
+CREATE TABLE IF NOT EXISTS `toppings` (
+  `toping_id` int(11) NOT NULL,
+  `toping_name` varchar(255) NOT NULL,
+  `toping_url` varchar(255) NOT NULL,
+  `product_id` varchar(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `toppings`
+--
+
+INSERT INTO `toppings` (`toping_id`, `toping_name`, `toping_url`, `product_id`) VALUES
+(1, 'เซอร์รี่', '/images/toppings/download_burned.png', '2'),
+(2, 'ส้ม', '/images/toppings/download_burned.png', '2'),
+(3, 'เบอรี่', '/images/toppings/download_burned.png', '2'),
+(4, 'เย็นรี่', '/images/toppings/download_burned.png', '1');
 
 -- --------------------------------------------------------
 
@@ -261,17 +242,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(100) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
-  `nickname` varchar(50) NOT NULL,
-  `birthday` date NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `tel` varchar(15) NOT NULL,
-  `identification_card` varchar(13) NOT NULL,
-  `image_profile` varchar(255) NOT NULL,
+  `nickname` varchar(50) DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `tel` varchar(15) DEFAULT NULL,
+  `identification_card` varchar(13) DEFAULT NULL,
+  `image_profile` varchar(255) DEFAULT NULL,
   `rote` varchar(5) NOT NULL,
-  `active` varchar(1) NOT NULL,
-  `latitude` varchar(15) NOT NULL,
-  `longtitude` varchar(15) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `active` varchar(1) DEFAULT NULL,
+  `latitude` varchar(15) DEFAULT NULL,
+  `longtitude` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -280,7 +261,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `firstname`, `lastname`, `nickname`, `birthday`, `address`, `tel`, `identification_card`, `image_profile`, `rote`, `active`, `latitude`, `longtitude`) VALUES
 (1, 'admin', '123456', 'cakeshow_admin@gmail.com', 'admin', 'cakeshop', 'admin', '2000-03-17', 'khon kean', '0893453453', '1234567890123', '', 'admin', 'y', '0', '0'),
 (2, 'user', '123456', 'user@gmail.com', 'user', 'name', 'user', '2015-04-27', 'khon kean', '0893453453', '1234567890123', '', 'user', 'y', '0', '0'),
-(3, 'surasak', '1234', 'surasak.ict.msu@gmail.com', 'Surasak', 'La-ongkham', 'M', '2013-12-12', 'KKS Company', '0801953624', '', '', 'cust', 'y', '', '');
+(3, 'surasak', '1234', 'surasak.ict.msu@gmail.com', 'Surasak', 'La-ongkham', 'M', '2013-12-12', 'KKS Company', '0801953624', '', '', 'cust', 'y', '', ''),
+(4, 'eeeeeee', 'eeeee', 'eeeeeeeee', 'eeeeeee', 'eeeeeeeee', NULL, NULL, NULL, NULL, NULL, NULL, 'cust', 'y', NULL, NULL),
+(5, 'eeeeeee', 'eeeee', 'eeeeeeeee', 'eeeeeee', 'eeeeeeeee', NULL, NULL, NULL, NULL, NULL, NULL, 'cust', 'y', NULL, NULL),
+(6, 'mm', 'mm', 'mm@gmail.com', 'mm', 'mm', NULL, NULL, NULL, NULL, NULL, NULL, 'cust', 'y', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -299,12 +283,6 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indexes for table `gallerys`
---
-ALTER TABLE `gallerys`
-  ADD PRIMARY KEY (`gallery_id`);
-
---
 -- Indexes for table `notifications`
 --
 ALTER TABLE `notifications`
@@ -315,12 +293,6 @@ ALTER TABLE `notifications`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`order_id`), ADD KEY `customer_id` (`customer_id`);
-
---
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `order_detail`
@@ -339,6 +311,12 @@ ALTER TABLE `payments_comfirm`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `toppings`
+--
+ALTER TABLE `toppings`
+  ADD PRIMARY KEY (`toping_id`);
 
 --
 -- Indexes for table `users`
@@ -361,11 +339,6 @@ ALTER TABLE `banks`
 ALTER TABLE `category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
--- AUTO_INCREMENT for table `gallerys`
---
-ALTER TABLE `gallerys`
-  MODIFY `gallery_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
@@ -374,32 +347,32 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
---
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `payments_comfirm`
 --
 ALTER TABLE `payments_comfirm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `toppings`
+--
+ALTER TABLE `toppings`
+  MODIFY `toping_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
