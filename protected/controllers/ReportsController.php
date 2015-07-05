@@ -37,27 +37,38 @@ WHERE DATEDIFF( DATE(  `limit_date` ) , CURDATE( ) ) =1
         
         }
         
-         public function actionSendMail(){
-        if($_POST){
-//            print_r($_POST);
-//            $website_id = $_POST["website_id"];
-//            $websites = $this->loadModel($website_id);
-//            $this->render('gmailSend');    
+        public function actionSendMail(){
+//        print($_POST["email"]);
+        if($_POST){   
+           
+//            $url = "http://localhost/dreamdata/index.php?r=sites/Resetpassword&id=".$model["userid"]."";
+            $path = "C:\\AppServ\\www\\cakeshop\\protected\\controllers\\class.phpmailer.php";
+           // $body = "<b>รีเซตระหัสผ่าน :<a href='".$url."'>คลิก</a></b>";
+            $message = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title></title>
+        <style></style>
+    </head>
+    <body>
+        <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+            <tr>
+                <td align="center" valign="top">
+                    <table border="0" cellpadding="20" cellspacing="0" width="600" id="emailContainer">
+                        <tr>
+                            <td align="center" valign="top">
+                                This is where my content goes.
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>';
             
-            $website_id = $_POST["website_id"];
-            $websites = Websites::model()->findByPk($website_id);     
-            $model = Yii::app()->db->createCommand()
-                ->select('*')
-                ->from('users')
-                ->where('email=:email', array(':email' => $_POST["fg_email"]))
-                ->queryRow();
-            
-//            print_r($model);
-            $url = "http://localhost/dreamdata/index.php?r=sites/Resetpassword&id=".$model["userid"]."";
-//            echo $url;
-            $body = "<b>รีเซตระหัสผ่าน :<a href='".$url."'>คลิก</a></b>";
-//            echo $body;
-            include "class.phpmailer.php"; // include the class name
+            include $path; // include the class name
                     $mail = new PHPMailer(); // create a new object
                     $mail->IsSMTP(); // enable SMTP
                     $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
@@ -70,19 +81,15 @@ WHERE DATEDIFF( DATE(  `limit_date` ) , CURDATE( ) ) =1
                     $mail->Password = "dreamdata123456";
                     $mail->SetFrom("dreamdata.reset@gmail.com");
                     $mail->Subject = "Reset Password";
-                    $mail->Body = $body;
-                    $mail->AddAddress($model["email"]);
+                    $mail->Body = $message;
+                    $mail->AddAddress($_POST["email"]);
                      if(!$mail->Send()){
                             echo "Mailer Error: " . $mail->ErrorInfo;
                     }
                     else{
                             echo 1;
                     }
-            
-//            $this->render("gmailSend", array(
-//                    'websites' => $websites,
-//                    'model' => $model
-//            ));
+           
         }    
     }
         

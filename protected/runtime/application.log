@@ -2004,3 +2004,233 @@ Stack trace:
 REQUEST_URI=/cakeshop/index.php?r=Reports/BillsLimitdate
 HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/BillsLimitdate
 ---
+2015/07/04 17:36:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Reader/SendMail".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reader/SendMail')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reader/SendMail
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/BillsLimitdate
+---
+2015/07/04 16:41:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "SendMail?email=agkasit.ecp7@gmail.com".' in C:\AppServ\www\cakeshop\framework\web\CController.php:483
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(270): CController->missingAction('SendMail?email=...')
+#1 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('SendMail?email=...')
+#2 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/SendMai...')
+#3 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail?email=agkasit.ecp7@gmail.com
+---
+2015/07/04 17:43:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Reader/SendMail".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reader/SendMail')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reader/SendMail&email=surasak.ict.msu@gmail.com
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/BillsLimitdate
+---
+2015/07/04 16:44:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index.php?r=Reader/SendMail".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('index.php?r=Rea...')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=index.php?r=Reader/SendMail
+---
+2015/07/04 16:45:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index.php".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('index.php')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=index.php
+---
+2015/07/04 17:45:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Reader/SendMail".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reader/SendMail')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reader/SendMail&email=surasak.ict.msu@gmail.com
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/BillsLimitdate
+---
+2015/07/04 17:45:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Reader/SendMail".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reader/SendMail')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reader/SendMail&email=surasak.ict.msu@gmail.com
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/BillsLimitdate
+---
+2015/07/04 17:45:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Reader/SendMail".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reader/SendMail')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reader/SendMail&email=surasak.ict.msu@gmail.com
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/BillsLimitdate
+---
+2015/07/04 17:47:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Reader/SendMail".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reader/SendMail')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reader/SendMail
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/BillsLimitdate
+---
+2015/07/04 18:05:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Reader/SendMail".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reader/SendMail')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reader/SendMail
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/BillsLimitdate
+---
+2015/07/04 18:18:48 [error] [php] PHPMailer::require_once(class.smtp.php) [<a href='phpmailer.require-once'>phpmailer.require-once</a>]: failed to open stream: No such file or directory (C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php:663)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(62): PHPMailer->Send()
+#1 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSendMail()
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#5 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (537)
+2015/07/04 18:23:24 [error] [php] PHPMailer::require_once(class.smtp.php) [<a href='phpmailer.require-once'>phpmailer.require-once</a>]: failed to open stream: No such file or directory (C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php:663)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(62): PHPMailer->Send()
+#1 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSendMail()
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#5 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (537)
+2015/07/04 18:26:33 [error] [php] PHPMailer::require_once(class.smtp.php) [<a href='phpmailer.require-once'>phpmailer.require-once</a>]: failed to open stream: No such file or directory (C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php:663)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(62): PHPMailer->Send()
+#1 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSendMail()
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#5 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (537)
+2015/07/04 19:19:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('admin')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=admin
+---
+2015/07/04 20:34:35 [error] [php] PHPMailer::require_once(class.smtp.php) [<a href='phpmailer.require-once'>phpmailer.require-once</a>]: failed to open stream: No such file or directory (C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php:663)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(62): PHPMailer->Send()
+#1 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSendMail()
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#5 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (537)
+2015/07/04 20:34:37 [error] [php] PHPMailer::require_once(class.smtp.php) [<a href='phpmailer.require-once'>phpmailer.require-once</a>]: failed to open stream: No such file or directory (C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php:663)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(62): PHPMailer->Send()
+#1 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSendMail()
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#5 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (537)
+2015/07/04 20:45:39 [error] [php] PHPMailer::require_once(class.smtp.php) [<a href='phpmailer.require-once'>phpmailer.require-once</a>]: failed to open stream: No such file or directory (C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php:663)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(62): PHPMailer->Send()
+#1 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSendMail()
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#5 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (537)
+2015/07/04 20:50:00 [error] [php] PHPMailer::require_once(class.smtp.php) [<a href='phpmailer.require-once'>phpmailer.require-once</a>]: failed to open stream: No such file or directory (C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php:663)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(62): PHPMailer->Send()
+#1 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSendMail()
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#5 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (537)
+2015/07/04 21:02:22 [error] [php] ReportsController::include(/class.phpmailer.php) [<a href='reportscontroller.include'>reportscontroller.include</a>]: failed to open stream: No such file or directory (C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php:47)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#3 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#4 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail
+in C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php (47)
+in C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php (47)
+in C:\AppServ\www\cakeshop\index.php (13)
+2015/07/04 21:04:47 [error] [php] PHPMailer::require_once(class.smtp.php) [<a href='phpmailer.require-once'>phpmailer.require-once</a>]: failed to open stream: No such file or directory (C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php:663)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(62): PHPMailer->Send()
+#1 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSendMail()
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#5 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendMail
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (663)
+in C:\AppServ\www\cakeshop\protected\controllers\class.phpmailer.php (537)

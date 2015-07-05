@@ -54,12 +54,17 @@ class FrontendController extends Controller {
                 Yii::app()->session["user_id"] = $user["user_id"]; 
                 Yii::app()->session["username"] = $user["username"];
                 Yii::app()->session["role"] = $user["rote"];
+                if($user["rote"] == "admin"){
+                    $this->redirect('index.php?r=site');
+                }else{
+                    $this->redirect('index.php?r=frontend');
+                }
             } else {
                 Yii::app()->session['error_login'] = 'Y';
             }
         }
         
-        $this->redirect('index.php?r=frontend');
+        
     }
     
     public function actionRegister(){
