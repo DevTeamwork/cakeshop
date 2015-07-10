@@ -1354,6 +1354,180 @@ Stack trace:
 REQUEST_URI=/cakeshop/index.php?r=frontend/saveRegister
 in C:\xampp\htdocs\cakeshop\protected\controllers\FrontendController.php (83)
 in C:\xampp\htdocs\cakeshop\index.php (13)
+<<<<<<< HEAD
+2015/07/02 13:13:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\AppServ\www\cakeshop\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\AppServ\www\cakeshop\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\AppServ\www\cakeshop\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(20): CModule->__get('db')
+#5 D:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionOrders()
+#6 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('Orders')
+#10 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/Orders')
+#11 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/Orders
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=site
+---
+2015/07/02 13:15:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\AppServ\www\cakeshop\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\AppServ\www\cakeshop\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\AppServ\www\cakeshop\framework\base\CApplication.php(450): CModule->getComponent('db')
+#4 D:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(634): CApplication->getDb()
+#5 D:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 D:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(1469): CActiveRecord->getCommandBuilder()
+#7 D:\AppServ\www\cakeshop\protected\controllers\ProductsController.php(16): CActiveRecord->findAll()
+#8 D:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ProductsController->actionAdd()
+#9 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('add')
+#13 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Products/add')
+#14 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/cakeshop/index.php?r=Products/add
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=site
+---
+2015/07/02 13:15:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\AppServ\www\cakeshop\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\AppServ\www\cakeshop\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\AppServ\www\cakeshop\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(20): CModule->__get('db')
+#5 D:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionOrders()
+#6 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('Orders')
+#10 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/Orders')
+#11 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/Orders
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=site
+---
+2015/07/02 14:05:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\AppServ\www\cakeshop\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\AppServ\www\cakeshop\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\AppServ\www\cakeshop\framework\base\CApplication.php(450): CModule->getComponent('db')
+#4 D:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(634): CApplication->getDb()
+#5 D:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 D:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(1469): CActiveRecord->getCommandBuilder()
+#7 D:\AppServ\www\cakeshop\protected\controllers\ProductsController.php(8): CActiveRecord->findAll()
+#8 D:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ProductsController->actionIndex()
+#9 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('index')
+#13 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Products/index')
+#14 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/cakeshop/index.php?r=Products/index
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=site
+---
+2015/07/02 14:06:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\AppServ\www\cakeshop\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\AppServ\www\cakeshop\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\AppServ\www\cakeshop\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\AppServ\www\cakeshop\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(20): CModule->__get('db')
+#5 D:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionOrders()
+#6 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('Orders')
+#10 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/Orders')
+#11 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/Orders
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=Site/
+---
+2015/07/02 14:43:54 [error] [php] Cannot modify header information - headers already sent by (output started at D:\AppServ\www\cakeshop\protected\controllers\FrontendController.php:45) (D:\AppServ\www\cakeshop\framework\web\CHttpRequest.php:803)
+Stack trace:
+#0 D:\AppServ\www\cakeshop\protected\controllers\FrontendController.php(64): FrontendController->redirect()
+#1 D:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): FrontendController->actionCheckLogin()
+#2 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 D:\AppServ\www\cakeshop\framework\web\CController.php(286): FrontendController->runAction()
+#4 D:\AppServ\www\cakeshop\framework\web\CController.php(265): FrontendController->runActionWithFilters()
+#5 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): FrontendController->run()
+#6 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 D:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=frontend/checkLogin
+in D:\AppServ\www\cakeshop\protected\controllers\FrontendController.php (64)
+in D:\AppServ\www\cakeshop\index.php (13)
+2015/07/03 03:17:44 [error] [php] mkdir() [<a href='function.mkdir'>function.mkdir</a>]: No such file or directory (D:\AppServ\www\cakeshop\protected\controllers\BanksController.php:47)
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\AppServ\www\cakeshop\framework\web\CController.php(286): BanksController->runAction()
+#2 D:\AppServ\www\cakeshop\framework\web\CController.php(265): BanksController->runActionWithFilters()
+#3 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): BanksController->run()
+#4 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Banks/ChangeProfileImage
+in D:\AppServ\www\cakeshop\protected\controllers\BanksController.php (47)
+in D:\AppServ\www\cakeshop\index.php (13)
+2015/07/03 03:18:46 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cakeshop_db.order' doesn't exist. The SQL statement executed was: SELECT `o`.`order_id`, `u`.`firstname`, `u`.`lastname`, `o`.`order_date`, `o`.`order_status`
+FROM `order` `o`
+JOIN `users` `u` ON u.user_id  = o.customer_id.
+in D:\AppServ\www\cakeshop\protected\controllers\ReportsController.php (24)
+in D:\AppServ\www\cakeshop\index.php (13)
+2015/07/03 03:18:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cakeshop_db.order' doesn't exist. The SQL statement executed was: SELECT `o`.`order_id`, `u`.`firstname`, `u`.`lastname`, `o`.`order_date`, `o`.`order_status`
+FROM `order` `o`
+JOIN `users` `u` ON u.user_id  = o.customer_id' in D:\AppServ\www\cakeshop\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(24): CDbCommand->queryAll()
+#2 D:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionOrders()
+#3 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('Orders')
+#7 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/Orders')
+#8 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/Orders
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=Banks/Index
+---
+2015/07/03 03:20:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cakeshop_db.order' doesn't exist. The SQL statement executed was: SELECT `o`.`order_id`, `u`.`firstname`, `u`.`lastname`, `o`.`order_date`, `o`.`order_status`
+FROM `order` `o`
+JOIN `users` `u` ON u.user_id  = o.customer_id.
+in D:\AppServ\www\cakeshop\protected\controllers\ReportsController.php (24)
+in D:\AppServ\www\cakeshop\index.php (13)
+2015/07/03 03:20:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cakeshop_db.order' doesn't exist. The SQL statement executed was: SELECT `o`.`order_id`, `u`.`firstname`, `u`.`lastname`, `o`.`order_date`, `o`.`order_status`
+FROM `order` `o`
+JOIN `users` `u` ON u.user_id  = o.customer_id' in D:\AppServ\www\cakeshop\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(24): CDbCommand->queryAll()
+#2 D:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionOrders()
+#3 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('Orders')
+#7 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/Orders')
+#8 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/Orders
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=Banks/Index
+=======
 >>>>>>> origin/master
 2015/07/02 14:29:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\AppServ\www\cakeshop\framework\db\CDbConnection.php:382
 Stack trace:
@@ -2003,6 +2177,41 @@ Stack trace:
 #13 {main}
 REQUEST_URI=/cakeshop/index.php?r=Reports/BillsLimitdate
 HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/BillsLimitdate
+>>>>>>> origin/master
+---
+2015/07/04 17:42:14 [error] [php] mkdir() [<a href='function.mkdir'>function.mkdir</a>]: No such file or directory (D:\AppServ\www\cakeshop\protected\controllers\BanksController.php:47)
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\AppServ\www\cakeshop\framework\web\CController.php(286): BanksController->runAction()
+#2 D:\AppServ\www\cakeshop\framework\web\CController.php(265): BanksController->runActionWithFilters()
+#3 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): BanksController->run()
+#4 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Banks/ChangeProfileImage
+in D:\AppServ\www\cakeshop\protected\controllers\BanksController.php (47)
+in D:\AppServ\www\cakeshop\index.php (13)
+2015/07/04 17:42:39 [error] [exception.CException] exception 'CException' with message 'Property "Products.photo" is not defined.' in D:\AppServ\www\cakeshop\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\db\ar\CActiveRecord.php(145): CComponent->__get('photo')
+#1 D:\AppServ\www\cakeshop\framework\base\CModel.php(596): CActiveRecord->__get('photo')
+#2 D:\AppServ\www\cakeshop\protected\views\frontend\products.php(12): CModel->offsetGet('photo')
+#3 D:\AppServ\www\cakeshop\framework\web\CBaseController.php(126): require('D:\AppServ\www\...')
+#4 D:\AppServ\www\cakeshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\AppServ\www\...', Array, true)
+#5 D:\AppServ\www\cakeshop\framework\web\CController.php(869): CBaseController->renderFile('D:\AppServ\www\...', Array, true)
+#6 D:\AppServ\www\cakeshop\framework\web\CController.php(782): CController->renderPartial('products', Array, true)
+#7 D:\AppServ\www\cakeshop\protected\controllers\FrontendController.php(25): CController->render('products', Array)
+#8 D:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): FrontendController->actionProducts()
+#9 D:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('products')
+#13 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#14 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/cakeshop/index.php?r=frontend/products
+HTTP_REFERER=http://localhost/cakeshop/index.php
 ---
 2015/07/04 17:36:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Reader/SendMail".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
 Stack trace:
