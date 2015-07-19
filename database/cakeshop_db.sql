@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2015 at 09:56 AM
+-- Generation Time: Jul 19, 2015 at 11:45 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -52,7 +52,7 @@ INSERT INTO `banks` (`bank_id`, `bank_name`, `branch`, `account_no`, `account_na
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `category`
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `order_status` int(1) NOT NULL COMMENT '0 = not comfirm, 1 = confirmed, 2 = send',
   `limit_date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `order`
@@ -113,7 +113,11 @@ INSERT INTO `order` (`order_id`, `customer_id`, `order_date`, `order_status`, `l
 (38, 3, '2015-07-04 06:54:51', 0, '0000-00-00'),
 (39, 3, '2015-07-04 06:55:14', 0, '0000-00-00'),
 (40, 3, '2015-07-04 06:55:29', 0, '0000-00-00'),
-(41, 3, '2015-07-04 06:56:17', 0, '2015-07-04');
+(41, 3, '2015-07-04 06:56:17', 0, '2015-07-04'),
+(42, 3, '2015-07-04 08:09:38', 0, '2015-07-11'),
+(43, 3, '2015-07-19 09:13:31', 0, '2015-07-26'),
+(44, 3, '2015-07-19 09:15:28', 0, '2015-07-26'),
+(45, 3, '2015-07-19 09:17:20', 0, '2015-07-26');
 
 -- --------------------------------------------------------
 
@@ -129,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `product_id` int(11) NOT NULL,
   `greeting_text` varchar(255) NOT NULL,
   `send_date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `order_detail`
@@ -137,7 +141,12 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
 
 INSERT INTO `order_detail` (`order_detail_id`, `order_id`, `order_qty`, `product_price`, `product_id`, `greeting_text`, `send_date`) VALUES
 (29, 36, 1, 350, 1, '', '2015-07-04'),
-(30, 38, 1, 350, 1, '', '2015-07-04');
+(30, 38, 1, 350, 1, '', '2015-07-04'),
+(31, 42, 1, 350, 1, '', '2015-07-04'),
+(32, 43, 1, 300, 2, '', '2015-07-19'),
+(33, 44, 1, 350, 1, '', '2015-07-19'),
+(34, 44, 1, 300, 2, '', '2015-07-19'),
+(35, 45, 1, 350, 1, '', '2015-07-19');
 
 -- --------------------------------------------------------
 
@@ -150,7 +159,20 @@ CREATE TABLE IF NOT EXISTS `order_topping` (
   `order_detail_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `topping_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `order_topping`
+--
+
+INSERT INTO `order_topping` (`order_topping_id`, `order_detail_id`, `product_id`, `topping_id`) VALUES
+(1, 32, 2, 1),
+(2, 32, 2, 2),
+(3, 32, 2, 3),
+(4, 33, 1, 4),
+(5, 34, 2, 1),
+(6, 34, 2, 2),
+(7, 35, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -196,7 +218,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `size` varchar(10) NOT NULL,
   `photo` varchar(255) NOT NULL,
   `photo_emty` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
@@ -301,6 +323,12 @@ ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`order_detail_id`), ADD KEY `order_id` (`order_id`), ADD KEY `order_id_2` (`order_id`), ADD KEY `product_id` (`product_id`);
 
 --
+-- Indexes for table `order_topping`
+--
+ALTER TABLE `order_topping`
+  ADD PRIMARY KEY (`order_topping_id`);
+
+--
 -- Indexes for table `payments_comfirm`
 --
 ALTER TABLE `payments_comfirm`
@@ -337,7 +365,7 @@ ALTER TABLE `banks`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `notifications`
 --
@@ -347,12 +375,17 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
+  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+--
+-- AUTO_INCREMENT for table `order_topping`
+--
+ALTER TABLE `order_topping`
+  MODIFY `order_topping_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `payments_comfirm`
 --
@@ -362,7 +395,7 @@ ALTER TABLE `payments_comfirm`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `toppings`
 --
