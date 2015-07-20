@@ -16,7 +16,8 @@ class FrontendController extends Controller {
     public $layout = '//layouts/frontend.layout.main';
     
     public function actionIndex() {
-        $this->render('index');
+        $products = Products::model()->findAll(array('limit' => '3'));
+        $this->render('index', array('products' => $products));
     }
     
     public function actionProducts() {
@@ -29,7 +30,7 @@ class FrontendController extends Controller {
         $product = Products::model()->findByPk($product_id);
         //$toppings = Toppings::model()->findByAttributes(array('product_id' => $product_id));
         $topping_sql = "SELECT * FROM toppings WHERE product_id = '" . $product_id . "'";
-        $toppings = Yii::app()->db->createCommand($topping_sql)->queryRow();
+        $toppings = Yii::app()->db->createCommand($topping_sql)->queryAll();
         
         $this->render('customize_cake', array(
             'product' => $product, 
@@ -54,12 +55,17 @@ class FrontendController extends Controller {
                 Yii::app()->session["user_id"] = $user["user_id"]; 
                 Yii::app()->session["username"] = $user["username"];
                 Yii::app()->session["role"] = $user["rote"];
+                if($user["rote"] == "admin"){
+                    $this->redirect('index.php?r=site');
+                }else{
+                    $this->redirect('index.php?r=frontend');
+                }
             } else {
                 Yii::app()->session['error_login'] = 'Y';
             }
         }
         
-        $this->redirect('index.php?r=frontend');
+        
     }
     
     public function actionRegister(){

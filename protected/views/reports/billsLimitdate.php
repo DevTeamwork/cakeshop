@@ -57,6 +57,26 @@
 //            }
 //
 //        });
+
+         $(".send-mail").on("click", function() {
+            var _a = $(this).parent().find('button');
+            var id = _a.data().id;
+            var email = _a.data().email;
+//            alert("id : " + id + " name: " + name);
+            var row = $(this).parents('tr:first');
+//            userDelete(id, name, row);
+              $.ajax({
+                    url: 'index.php?r=Reports/SendMail',
+                    data: {email:email},
+                    type: "POST",
+                    success: function (data) {
+
+                        if (data == '1') {
+                            alert("ระบบได้รายละเอียดการให้คุณอีเมลล์ โปรดตรวจสอบ");
+                        }
+                    }
+                });
+        });
     });
 </script>
 <style>
@@ -108,6 +128,7 @@
                     $lastname = $model["lastname"];
                     $tel = $model["tel"];
                     $address = $model["address"];
+                    $email = $model["email"];
                     ?>
                     <tr>
                         <td style="width: 10%;"><?php echo $id; ?></td>
@@ -115,9 +136,10 @@
                         <td style="width: 15%;"><?php echo $tel; ?></td> 
                         <td><?php echo $address; ?></td> 
                         <td style="width: 10%;">
-                            <div class="btn-group" >
+                            <div class="btn-group send-mail" >
                                 <button class="edit" data-title="แจ้งเตือน" rel="tooltip" 
                                         data-id="<?php echo $id; ?>" 
+                                        data-email="<?php echo $email; ?>"
                                         >
                                     <i class="fa fa-paper-plane"></i></button>
                             </div> 

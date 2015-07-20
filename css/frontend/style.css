@@ -145,7 +145,8 @@ body a{
 }
 
 .head-nav ul li:nth-child(3){
-	margin-left: 30.5%;
+	margin-left: 0;
+        text-align: center;
 }
 .logo{
 	position: absolute;

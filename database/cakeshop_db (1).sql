@@ -1,19 +1,11 @@
 -- phpMyAdmin SQL Dump
 -- version 2.10.3
 -- http://www.phpmyadmin.net
-<<<<<<< HEAD
 -- 
 -- โฮสต์: localhost
 -- เวลาในการสร้าง: 
 -- รุ่นของเซิร์ฟเวอร์: 5.0.51
 -- รุ่นของ PHP: 5.2.6
-=======
---
--- Host: 127.0.0.1
--- Generation Time: Jul 19, 2015 at 11:45 AM
--- Server version: 5.6.24
--- PHP Version: 5.6.8
->>>>>>> origin/master
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -50,18 +42,11 @@ INSERT INTO `banks` VALUES (3, 'กรุงไทย', 'ขอนแก่น',
 -- โครงสร้างตาราง `category`
 -- 
 
-<<<<<<< HEAD
 CREATE TABLE `category` (
   `category_id` int(11) NOT NULL auto_increment,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY  (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
-=======
-CREATE TABLE IF NOT EXISTS `category` (
-  `category_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
->>>>>>> origin/master
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 -- 
 -- dump ตาราง `category`
@@ -104,7 +89,6 @@ CREATE TABLE `order` (
   `customer_id` int(11) NOT NULL,
   `order_date` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `order_status` int(1) NOT NULL COMMENT '0 = not comfirm, 1 = confirmed, 2 = send',
-<<<<<<< HEAD
   `limit_date` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`order_id`),
   KEY `customer_id` (`customer_id`)
@@ -122,32 +106,8 @@ INSERT INTO `order` VALUES (36, 3, '2015-07-04 13:49:30', 0, '2015-07-13 00:00:0
 INSERT INTO `order` VALUES (37, 3, '2015-07-04 13:52:18', 0, '2015-07-20 00:00:00');
 INSERT INTO `order` VALUES (38, 3, '2015-07-04 13:54:51', 0, '2015-07-21 00:00:00');
 INSERT INTO `order` VALUES (39, 3, '2015-07-04 13:55:14', 0, '2015-07-06 00:00:00');
-INSERT INTO `order` VALUES (40, 3, '2015-07-04 13:55:29', 0, '2015-07-05 00:00:00');
-INSERT INTO `order` VALUES (41, 3, '2015-07-04 13:56:17', 0, '2015-07-05 00:00:00');
-=======
-  `limit_date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`order_id`, `customer_id`, `order_date`, `order_status`, `limit_date`) VALUES
-(32, 3, '2015-07-04 06:31:13', 0, '0000-00-00'),
-(33, 3, '2015-07-04 06:33:34', 0, '0000-00-00'),
-(34, 3, '2015-07-04 06:48:09', 0, '0000-00-00'),
-(35, 3, '2015-07-04 06:48:29', 0, '0000-00-00'),
-(36, 3, '2015-07-04 06:49:30', 0, '0000-00-00'),
-(37, 3, '2015-07-04 06:52:18', 0, '0000-00-00'),
-(38, 3, '2015-07-04 06:54:51', 0, '0000-00-00'),
-(39, 3, '2015-07-04 06:55:14', 0, '0000-00-00'),
-(40, 3, '2015-07-04 06:55:29', 0, '0000-00-00'),
-(41, 3, '2015-07-04 06:56:17', 0, '2015-07-04'),
-(42, 3, '2015-07-04 08:09:38', 0, '2015-07-11'),
-(43, 3, '2015-07-19 09:13:31', 0, '2015-07-26'),
-(44, 3, '2015-07-19 09:15:28', 0, '2015-07-26'),
-(45, 3, '2015-07-19 09:17:20', 0, '2015-07-26');
->>>>>>> origin/master
+INSERT INTO `order` VALUES (40, 7, '2015-07-04 13:55:29', 0, '2015-07-10 00:00:00');
+INSERT INTO `order` VALUES (41, 7, '2015-07-04 13:56:17', 0, '2015-07-10 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -162,35 +122,19 @@ CREATE TABLE `order_detail` (
   `product_price` float NOT NULL,
   `product_id` int(11) NOT NULL,
   `greeting_text` varchar(255) NOT NULL,
-<<<<<<< HEAD
   `send_date` date NOT NULL,
   PRIMARY KEY  (`order_detail_id`),
   KEY `order_id` (`order_id`),
   KEY `order_id_2` (`order_id`),
   KEY `product_id` (`product_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
-=======
-  `send_date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
->>>>>>> origin/master
 
 -- 
 -- dump ตาราง `order_detail`
 -- 
 
-<<<<<<< HEAD
 INSERT INTO `order_detail` VALUES (29, 36, 1, 350, 1, '', '2015-07-04');
 INSERT INTO `order_detail` VALUES (30, 38, 1, 350, 1, '', '2015-07-04');
-=======
-INSERT INTO `order_detail` (`order_detail_id`, `order_id`, `order_qty`, `product_price`, `product_id`, `greeting_text`, `send_date`) VALUES
-(29, 36, 1, 350, 1, '', '2015-07-04'),
-(30, 38, 1, 350, 1, '', '2015-07-04'),
-(31, 42, 1, 350, 1, '', '2015-07-04'),
-(32, 43, 1, 300, 2, '', '2015-07-19'),
-(33, 44, 1, 350, 1, '', '2015-07-19'),
-(34, 44, 1, 300, 2, '', '2015-07-19'),
-(35, 45, 1, 350, 1, '', '2015-07-19');
->>>>>>> origin/master
 
 -- --------------------------------------------------------
 
@@ -203,20 +147,7 @@ CREATE TABLE `order_topping` (
   `order_detail_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `topping_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `order_topping`
---
-
-INSERT INTO `order_topping` (`order_topping_id`, `order_detail_id`, `product_id`, `topping_id`) VALUES
-(1, 32, 2, 1),
-(2, 32, 2, 2),
-(3, 32, 2, 3),
-(4, 33, 1, 4),
-(5, 34, 2, 1),
-(6, 34, 2, 2),
-(7, 35, 1, 4);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 
 -- dump ตาราง `order_topping`
@@ -266,14 +197,9 @@ CREATE TABLE `products` (
   `category_id` int(11) NOT NULL,
   `size` varchar(10) NOT NULL,
   `photo` varchar(255) NOT NULL,
-<<<<<<< HEAD
   `photo_emty` varchar(255) NOT NULL,
   PRIMARY KEY  (`product_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
-=======
-  `photo_emty` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
->>>>>>> origin/master
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- 
 -- dump ตาราง `products`
@@ -325,7 +251,6 @@ CREATE TABLE `users` (
   `identification_card` varchar(13) default NULL,
   `image_profile` varchar(255) default NULL,
   `rote` varchar(5) NOT NULL,
-<<<<<<< HEAD
   `active` varchar(1) default NULL,
   `latitude` varchar(15) default NULL,
   `longtitude` varchar(15) default NULL,
@@ -340,147 +265,9 @@ INSERT INTO `users` VALUES (1, 'admin', '123456', 'cakeshow_admin@gmail.com', 'a
 INSERT INTO `users` VALUES (2, 'user', '123456', 'user@gmail.com', 'user', 'name', 'user', '2015-04-27', 'khon kean', '0893453453', '1234567890123', '', 'user', 'y', '0', '0');
 INSERT INTO `users` VALUES (3, 'surasak', '1234', 'surasak.ict.msu@gmail.com', 'Surasak', 'La-ongkham', 'M', '2013-12-12', 'KKS Company', '0801953624', '', '', 'cust', 'y', '', '');
 INSERT INTO `users` VALUES (6, 'mm', 'mm', 'mm@gmail.com', 'mm', 'mm', NULL, NULL, NULL, NULL, NULL, NULL, 'cust', 'y', NULL, NULL);
-INSERT INTO `users` VALUES (7, 'agkasit', '123456', 'agkasit.ecp7@gmail.com', 'Agkasit', 'Tontan', NULL, NULL, NULL, NULL, NULL, NULL, 'cust', 'y', NULL, NULL);
+INSERT INTO `users` VALUES (7, 'agkasit', '123456', 'agkasit.ecp7@gmail.com', 'เจ้าสัว', 'ใหญ่', NULL, NULL, NULL, NULL, NULL, NULL, 'cust', 'y', NULL, NULL);
 
 -- 
-=======
-  `active` varchar(1) DEFAULT NULL,
-  `latitude` varchar(15) DEFAULT NULL,
-  `longtitude` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `firstname`, `lastname`, `nickname`, `birthday`, `address`, `tel`, `identification_card`, `image_profile`, `rote`, `active`, `latitude`, `longtitude`) VALUES
-(1, 'admin', '123456', 'cakeshow_admin@gmail.com', 'admin', 'cakeshop', 'admin', '2000-03-17', 'khon kean', '0893453453', '1234567890123', '', 'admin', 'y', '0', '0'),
-(2, 'user', '123456', 'user@gmail.com', 'user', 'name', 'user', '2015-04-27', 'khon kean', '0893453453', '1234567890123', '', 'user', 'y', '0', '0'),
-(3, 'surasak', '1234', 'surasak.ict.msu@gmail.com', 'Surasak', 'La-ongkham', 'M', '2013-12-12', 'KKS Company', '0801953624', '', '', 'cust', 'y', '', ''),
-(4, 'eeeeeee', 'eeeee', 'eeeeeeeee', 'eeeeeee', 'eeeeeeeee', NULL, NULL, NULL, NULL, NULL, NULL, 'cust', 'y', NULL, NULL),
-(5, 'eeeeeee', 'eeeee', 'eeeeeeeee', 'eeeeeee', 'eeeeeeeee', NULL, NULL, NULL, NULL, NULL, NULL, 'cust', 'y', NULL, NULL),
-(6, 'mm', 'mm', 'mm@gmail.com', 'mm', 'mm', NULL, NULL, NULL, NULL, NULL, NULL, 'cust', 'y', NULL, NULL);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `banks`
---
-ALTER TABLE `banks`
-  ADD PRIMARY KEY (`bank_id`);
-
---
--- Indexes for table `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`category_id`);
-
---
--- Indexes for table `notifications`
---
-ALTER TABLE `notifications`
-  ADD PRIMARY KEY (`notificatioin_id`);
-
---
--- Indexes for table `order`
---
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`order_id`), ADD KEY `customer_id` (`customer_id`);
-
---
--- Indexes for table `order_detail`
---
-ALTER TABLE `order_detail`
-  ADD PRIMARY KEY (`order_detail_id`), ADD KEY `order_id` (`order_id`), ADD KEY `order_id_2` (`order_id`), ADD KEY `product_id` (`product_id`);
-
---
--- Indexes for table `order_topping`
---
-ALTER TABLE `order_topping`
-  ADD PRIMARY KEY (`order_topping_id`);
-
---
--- Indexes for table `payments_comfirm`
---
-ALTER TABLE `payments_comfirm`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`);
-
---
--- Indexes for table `toppings`
---
-ALTER TABLE `toppings`
-  ADD PRIMARY KEY (`toping_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `banks`
---
-ALTER TABLE `banks`
-  MODIFY `bank_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `category`
---
-ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
---
--- AUTO_INCREMENT for table `notifications`
---
-ALTER TABLE `notifications`
-  MODIFY `notificatioin_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `order`
---
-ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
---
--- AUTO_INCREMENT for table `order_detail`
---
-ALTER TABLE `order_detail`
-  MODIFY `order_detail_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
---
--- AUTO_INCREMENT for table `order_topping`
---
-ALTER TABLE `order_topping`
-  MODIFY `order_topping_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `payments_comfirm`
---
-ALTER TABLE `payments_comfirm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `toppings`
---
-ALTER TABLE `toppings`
-  MODIFY `toping_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
->>>>>>> origin/master
 -- Constraints for dumped tables
 -- 
 

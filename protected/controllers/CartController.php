@@ -15,7 +15,7 @@ class CartController extends Controller {
 
     public $layout = '//layouts/frontend.layout.main';
     
-    public function actionAddToCart($product_id, $greeting, $send_date) {
+    public function actionAddToCart($product_id, $greeting, $send_date, $topping_id) {
 
         $product = Products::model()->findByPk($product_id);
         
@@ -25,7 +25,8 @@ class CartController extends Controller {
             'product_qty' => 1,
             'product_price' => $product['price'],
             'greeting_text' => $greeting,
-            'send_date' => $send_date
+            'send_date' => $send_date,
+            'topping_id' => $topping_id
         );
 
         $session['my_cart'] = array();
@@ -118,6 +119,23 @@ class CartController extends Controller {
                     $order_detail->greeting_text = $my_cart[$i]['greeting_text'];
                     $order_detail->send_date = $my_cart[$i]['send_date'];
                     $order_detail->save();
+                    
+                    // insert topping
+                    $topping_id_arr = explode(",", $my_cart[$i]['topping_id']);
+                    $topping_temp = array();
+                    foreach ($topping_id_arr as $topping_id) {
+                        if (!in_array($topping_id, $topping_temp)) {
+                            $topping_temp[] = $topping_id;
+                        }
+                    }
+                    
+                    foreach ($topping_temp as $temp) {
+                        $orderTopping = new OrderTopping();
+                        $orderTopping->order_detail_id = $order_detail->order_detail_id;
+                        $orderTopping->product_id = $my_cart[$i]['product_id'];
+                        $orderTopping->topping_id = $temp;
+                        $orderTopping->save();
+                    }
                 }
                 Yii::app()->session['my_cart'] = null;
                 $this->actionRenderResultPage();
