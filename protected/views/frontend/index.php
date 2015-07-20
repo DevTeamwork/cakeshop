@@ -1,6 +1,6 @@
 <!-- banner -->
 <div class="container">
-    <div class="img-slider">
+    <!--<div class="img-slider">-->
         <!----start-slider-script---->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/responsiveslides.min.js"></script>
         <script>
@@ -25,9 +25,9 @@
         </script>
         <!----//End-slider-script---->
         <!-- Slideshow 4 -->
-        <div  id="top" class="callbacks_container">
-            <ul class="rslides" id="slider4">
-                <li>
+        <!--<div  id="top" class="callbacks_container">-->
+            <!--<ul class="rslides" id="slider4">-->
+<!--                <li>
                     <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/slide.jpg" class="img-responsive" alt="">
                     <div class="slider-caption">
                         <div class="slider-caption-left text-center">
@@ -40,7 +40,7 @@
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <!-- share-on -->
+                     share-on 
                     <div class="share-on">
                         <div class="share-on-grid">
                             <div class="share-on-grid-left">
@@ -55,9 +55,9 @@
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <!-- share-on -->
-                </li>
-                <li>
+                     share-on 
+                </li>-->
+<!--                <li>
                     <img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/slide.jpg" class="img-responsive" alt="">
                     <div class="slider-caption">
                         <div class="slider-caption-left text-center">
@@ -70,7 +70,7 @@
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <!-- share-on -->
+                     share-on 
                     <div class="share-on">
                         <div class="share-on-grid">
                             <div class="share-on-grid-left">
@@ -85,7 +85,7 @@
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <!-- share-on -->
+                     share-on 
                 </li>
                 <li>
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/slide.jpg" class="img-responsive" alt="">
@@ -100,7 +100,7 @@
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <!-- share-on -->
+                     share-on 
                     <div class="share-on">
                         <div class="share-on-grid">
                             <div class="share-on-grid-left">
@@ -115,7 +115,7 @@
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <!-- share-on -->
+                     share-on 
                 </li>
                 <li>
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/slide.jpg" class="img-responsive" alt="">
@@ -130,7 +130,7 @@
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <!-- share-on -->
+                     share-on 
                     <div class="share-on">
                         <div class="share-on-grid">
                             <div class="share-on-grid-left">
@@ -145,53 +145,33 @@
                         </div>
                         <div class="clearfix"> </div>
                     </div>
-                    <!-- share-on -->
-                </li>
-            </ul>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
+                     share-on 
+                </li>-->
+<!--            </ul>-->
+        <!--</div>-->
+        <!--<div class="clearfix"> </div>-->
+    <!--</div>-->
     <!-- /banner -->
 </div>
 <!-- top-grids -->
 <div class="top-grids">
     <div class="container">
+        <?php foreach ($products as $product) : ?>
         <div class="col-md-4 top-grid">
             <div class="top-grid-head">
-                <h3>OUR CAKES</h3>
+                <h3><?php echo $product['name']; ?></h3>
             </div>
             <div class="top-grid-info">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/img1.jpg" class="img-responsive" title="name"/>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
-                <span>$60</span>
+                <!--<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/img1.jpg" class="img-responsive" title="name"/>-->
+                <img src="<?php echo $product['photo']; ?>" height="250px">
+                <br><br>
+                <span>ราคา <?php echo number_format($product['price']); ?> บาท</span>
                 <div class="clearfix"> </div>
-                <a class="btn" href="#">Buy Now</a>
+                <a class="btn" href="index.php?r=Frontend/selectSendDate&product_id=<?php echo $product['product_id']; ?>">สั่งซื้อ</a>
             </div>
         </div>
-        <div class="col-md-4 top-grid">
-            <div class="top-grid-head">
-                <h3>OUR CAKES</h3>
-            </div>
-            <div class="top-grid-info">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/img2.jpg" class="img-responsive" title="name"/>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
-                <span>$80</span>
-                <div class="clearfix"> </div>
-                <a class="btn" href="#">Buy Now</a>
-            </div>
-        </div>
-        <div class="col-md-4 top-grid">
-            <div class="top-grid-head">
-                <h3>OUR CAKES</h3>
-            </div>
-            <div class="top-grid-info">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/img3.jpg" class="img-responsive" title="name"/>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
-                <span>$120</span>
-                <div class="clearfix"> </div>
-                <a class="btn" href="#">Buy Now</a>
-            </div>
-        </div>
+        <?php endforeach; ?>
+        
     </div>
     <!-- top-grids-bg -->
     <div class="top-grids-bg">

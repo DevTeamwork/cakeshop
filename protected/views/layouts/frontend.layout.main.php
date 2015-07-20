@@ -95,7 +95,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <ul>
                     <li class="active"><a href="index.php?r=frontend">หน้าแรก</a></li>
                     <li><a href="index.php?r=frontend/products">สินค้า</a></li>
-                    <li><a href="#" style="margin-left: 80px;">เกี่ยวกับเรา</a></li>
+                    <li><a href="#">เกี่ยวกับเรา</a></li>
                     <li><a href="#">ติดต่อเรา</a></li>
                     <div class="clearfix"> </div>
                 </ul>
@@ -111,9 +111,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <!-- script-for-nav -->
 
             <!-- logo -->
-            <div class="logo">
+<!--            <div class="logo">
                 <a href="index.html"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/logo.png" title="Sweetcake" /></a>
-            </div>
+            </div>-->
             <!-- logo -->
         </div>
     </div>
