@@ -57,6 +57,26 @@
 //            }
 //
 //        });
+
+         $(".send-mail").on("click", function() {
+            var _a = $(this).parent().find('button');
+            var id = _a.data().id;
+            var email = _a.data().email;
+//            alert("id : " + id + " name: " + name);
+            var row = $(this).parents('tr:first');
+//            userDelete(id, name, row);
+              $.ajax({
+                    url: 'index.php?r=Reports/SendMail',
+                    data: {email:email},
+                    type: "POST",
+                    success: function (data) {
+
+                        if (data == '1') {
+                            alert("ระบบได้รายละเอียดการให้คุณอีเมลล์ โปรดตรวจสอบ");
+                        }
+                    }
+                });
+        });
     });
 </script>
 <style>
@@ -80,12 +100,12 @@
 
 <div class="row ">
     <div class="col-lg-12">
-        <h1 class="page-header"><i class="fa fa-bar-chart-o fa-fw"></i> รายการแจ้งเตือนบิลที่ยังไม่จ่ายเงิน</h1>
+        <h1 class="page-header"><i class="fa fa-bar-chart-o fa-fw"></i> แจ้งให้ชำระเงิน</h1>
     </div>
 </div>
 
 <ol class="breadcrumb">
-    <li><a href="index.php?r=Banks/index"><i class="fa fa-bar-chart-o fa-fw"></i> รายการแจ้งเตือนบิลที่ยังไม่จ่ายเงิน</a></li>
+    <li><a href="index.php?r=Banks/index"><i class="fa fa-bar-chart-o fa-fw"></i> แจ้งให้ชำระเงิน</a></li>
     <!--<li class="active">เพิ่มสินค้าใหม่</li>-->                                        
 </ol>
 <div class="panel panel-default">
@@ -93,35 +113,35 @@
         <table class="table table-condensed table-striped" id="table">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>วันที่</th>
-                    <th>เวลา</th>
-                    <th>ชื่อผู้สั่ง</th>
                     <th>เลขที่บิล</th>
-                    <!--<th>เมนู</th>-->
+                    <th>ชื่อ</th>
+                    <th>เบอร์โทร</th>
+                    <th>ที่อยู่</th>
+                    <th>เมนู</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 foreach ($model as $model):
-                    $id = $model["notificatioin_id"];
-                    $name = $model["create_date"];
-                    $branch = $model["create_time"];
-                    $account_no = $model["user_id"];
-                    $account_name = $model["bill_id"];
+                    $id = $model["order_id"];
+                    $firstname = $model["firstname"];
+                    $lastname = $model["lastname"];
+                    $tel = $model["tel"];
+                    $address = $model["address"];
+                    $email = $model["email"];
                     ?>
                     <tr>
-                        <td style="width: 5%;"><?php echo $id; ?></td>
-                        <td style="width: 35%;"><?php echo $name; ?></td> 
-                        <td style="width: 15%;"><?php echo $branch; ?></td> 
-                        <td style="width: 15%;"><?php echo $account_no; ?></td> 
-                        <td style="width: 15%;"><?php echo $account_name; ?></td> 
-                        <td style="width: 15%;">
-                            <div class="btn-group" >
+                        <td style="width: 10%;"><?php echo $id; ?></td>
+                        <td style="width: 20%;"><?php echo $firstname." ".$lastname; ?></td> 
+                        <td style="width: 15%;"><?php echo $tel; ?></td> 
+                        <td><?php echo $address; ?></td> 
+                        <td style="width: 10%;">
+                            <div class="btn-group send-mail" >
                                 <button class="edit" data-title="แจ้งเตือน" rel="tooltip" 
                                         data-id="<?php echo $id; ?>" 
+                                        data-email="<?php echo $email; ?>"
                                         >
-                                    <i class="glyphicon glyphicon-ok"></i></button>
+                                    <i class="fa fa-paper-plane"></i></button>
                             </div> 
                         </td>
                     <?php endforeach; ?>
@@ -130,5 +150,6 @@
         </table>
     </div>
 </div>
+
 
 

@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/cakeshop/protected/models/OrderDetail.php</file>
             <file>file:/C:/xampp/htdocs/cakeshop/protected/views/frontend/customize_cake.php</file>
+            <file>file:/C:/xampp/htdocs/cakeshop/protected/config/main.php</file>
             <file>file:/C:/xampp/htdocs/cakeshop/protected/views/frontend/products.php</file>
             <file>file:/C:/xampp/htdocs/cakeshop/protected/views/cart/add_to_cart.php</file>
             <file>file:/C:/xampp/htdocs/cakeshop/protected/models/OrderTopping.php</file>

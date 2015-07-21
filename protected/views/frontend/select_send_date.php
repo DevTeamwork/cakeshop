@@ -26,7 +26,7 @@
   
   function redirectToCart() {
         var send_date = $('#datepicker').val();
-        window.location.href = 'index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=&send_date=' + send_date;
+        window.location.href = 'index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=&send_date=' + send_date + '&topping_id=';
     }
   </script>
 <div class="biseller-info">
