@@ -142,7 +142,21 @@
 
 
     $(function () {
-        $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
+        var timeStr = parseInt($('#time').val());
+        var date = new Date();
+        var today = date.getFullYear() + "-" + ((date.getMonth().toString().length == 1 ? '0' : '') + (parseInt(date.getMonth()) + 1)) + "-" +date.getDate();
+        var array = [today];
+        for (var i = 0; i < timeStr; i++) {
+            var today1 = date.getFullYear() + "-" + ((date.getMonth().toString().length == 1 ? '0' : '') + (parseInt(date.getMonth()) + 1)) + "-" + (date.getDate() + (i + 1));
+            array.push(today1);
+        }
+        $("#datepicker").datepicker({
+            dateFormat: 'yy-mm-dd',
+            beforeShowDay: function(date){
+                var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+                return [ array.indexOf(string) == -1 ]
+            }
+        });
 
         //set initial state.
 //        $('#textbox1').val($(this).is(':checked'));
@@ -290,13 +304,14 @@
             <img id="main-cake" src="/cakeshop/images/products/fruit_burned.png" width="350">
             <!--</canvas>-->
             <div class="biseller-name" style="margin-top: 10px;">
-                <h4>เค้กผลไม้</h4>
-                <p>ราคา 300 บาท</p>
+                <h4><?php echo $product['name']; ?></h4>
+                <p>ราคา <?php echo $product['price']; ?> บาท</p>
                 <a href="javascript:redirectToCart()">
                     <button class="add2cart">
                         <span>| หยิบใส่ตะกร้า</span>
                     </button>
                 </a>
+                <input type="hidden" id="time" value="<?php echo $product['time']; ?>">
             </div>
             <div class="yely">
                <img class="c360" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
