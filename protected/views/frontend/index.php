@@ -183,36 +183,8 @@
 <!-- bottom-grids -->
 <div class="bottom-grids">
     <div class="container">
-        <div class="col-md-8 bottom-grid-left">
-            <div class="col-md-3 bottom-grid-left-grid text-center">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/pic2.jpg" title="name"/>
-                <h4>kids birthday cake</h4>
-                <p>$40</p>
-            </div>
-            <div class="col-md-3 bottom-grid-left-grid text-center">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/pic1.jpg" title="name"/>
-                <h4>kids birthday cake</h4>
-                <p>$40</p>
-            </div>
-            <div class="col-md-3 bottom-grid-left-grid text-center">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/pic3.jpg" title="name"/>
-                <h4>kids birthday cake</h4>
-                <p>$40</p>
-            </div>
-            <div class="col-md-3 bottom-grid-left-grid text-center">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/frontend/pic4.jpg" title="name"/>
-                <h4>kids birthday cake</h4>
-                <p>$40</p>
-            </div>
-            <div class="clearfix"> </div>
-            <span class="best-sale">Best sellers</span>
-            <a href="#" class="order"> </a>
-        </div>
-        <div class="col-md-4 bottom-grid-right">
-            <h3><span class="tweet"> </span> latest tweet</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-            <label>1 day ago</label>
-        </div>
+        
+        
         <div class="clearfix"> </div>
     </div>
 </div>
