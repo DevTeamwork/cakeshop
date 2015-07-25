@@ -65,7 +65,7 @@ class FrontendController extends Controller {
             }
         }
         
-        
+        $this->redirect('index.php?r=frontend');
     }
     
     public function actionRegister(){

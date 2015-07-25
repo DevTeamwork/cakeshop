@@ -21,12 +21,26 @@
 </style>
   <script>
   $(function() {
-    $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
+    var timeStr = parseInt($('#time').val());
+    var date = new Date();
+    var today = date.getFullYear() + "-" + ((date.getMonth().toString().length == 1 ? '0' : '') + (parseInt(date.getMonth()) + 1)) + "-" +date.getDate();
+    var array = [today];
+    for (var i = 0; i < timeStr; i++) {
+        var today1 = date.getFullYear() + "-" + ((date.getMonth().toString().length == 1 ? '0' : '') + (parseInt(date.getMonth()) + 1)) + "-" + (date.getDate() + (i + 1));
+        array.push(today1);
+    }
+    $( "#datepicker" ).datepicker({ 
+        dateFormat: 'yy-mm-dd',
+        beforeShowDay: function(date){
+            var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+            return [ array.indexOf(string) == -1 ]
+        }
+    });
   });
   
   function redirectToCart() {
         var send_date = $('#datepicker').val();
-        window.location.href = 'index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=&send_date=' + send_date;
+        window.location.href = 'index.php?r=Cart/addToCart&product_id=<?php echo $product['product_id']; ?>&greeting=&send_date=' + send_date + '&topping_id=';
     }
   </script>
 <div class="biseller-info">
@@ -43,7 +57,8 @@
                         <span>| หยิบใส่ตะกร้า</span>
                     </button>
                 </a>
-            </div>
+                <input type="hidden" id="time" value="<?php echo $product['time']; ?>">
+             </div>
         </div>
         
         <div id="panel-right">

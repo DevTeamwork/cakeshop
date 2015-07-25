@@ -32,9 +32,15 @@
 
     }
     .c90{
+<<<<<<< HEAD
           left: 369px;
   top: 300px;
   position: absolute;
+=======
+        left: 369px;
+        top: 300px;
+        position: absolute;
+>>>>>>> origin/master
     }
     .c135{
         left: 275px;
@@ -61,16 +67,114 @@
         top: 489px;
         position: absolute;
     }
+<<<<<<< HEAD
+=======
+    /* block 2 */
+    .c1360{
+        left: 490px;
+        top: 452px;
+        position: absolute;
+    }
+    .c145{
+        left: 492px;
+        top: 368px;
+        position: absolute;
+
+    }
+    .c190{
+        left: 424px;
+        top: 300px; 
+        position: absolute;
+    }
+    .c1135{
+        left: 315px;
+        top: 310px;
+        position: absolute;
+    }
+    .c1180{
+        left: 255px;
+        top: 370px;
+        position: absolute;
+    }
+    .c1225{
+        left: 265px;
+        top: 450px;
+        position: absolute;
+    }
+    .c1270{
+        left: 320px;
+        top: 510px;
+        position: absolute;
+    }
+    .c1315{
+        left: 415px;
+        top: 509px;
+        position: absolute;
+    }
+    
+    /* block 3 */
+    .c2360{
+        left: 425px;
+        top: 442px;
+        position: absolute;
+    }
+    .c245{
+        left: 432px;
+        top: 388px;
+        position: absolute;
+
+    }
+    .c290{
+        left: 384px;
+        top: 360px; 
+        position: absolute;
+    }
+    .c2135{
+        left: 335px;
+        top: 380px;
+        position: absolute;
+    }
+    .c2180{
+        left: 325px;
+        top: 425px;
+        position: absolute;
+    }
+    .c2225{
+        left: 365px;
+        top: 460px;
+        position: absolute;
+    }
+    
+>>>>>>> origin/master
 </style>
 <script type="text/javascript">
 
 
     $(function () {
+<<<<<<< HEAD
         $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
+=======
+        var timeStr = parseInt($('#time').val());
+        var date = new Date();
+        var today = date.getFullYear() + "-" + ((date.getMonth().toString().length == 1 ? '0' : '') + (parseInt(date.getMonth()) + 1)) + "-" +date.getDate();
+        var array = [today];
+        for (var i = 0; i < timeStr; i++) {
+            var today1 = date.getFullYear() + "-" + ((date.getMonth().toString().length == 1 ? '0' : '') + (parseInt(date.getMonth()) + 1)) + "-" + (date.getDate() + (i + 1));
+            array.push(today1);
+        }
+        $("#datepicker").datepicker({
+            dateFormat: 'yy-mm-dd',
+            beforeShowDay: function(date){
+                var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+                return [ array.indexOf(string) == -1 ]
+            }
+        });
+>>>>>>> origin/master
 
         //set initial state.
 //        $('#textbox1').val($(this).is(':checked'));
 
+<<<<<<< HEAD
         $('#checkbox1').change(function() {
             if($(this).is(":checked")) {
 //                var returnVal = confirm("Are you sure?");
@@ -80,6 +184,66 @@
                  $('.yely').hide()();
             }    
         });
+=======
+        $('.yely').hide();
+        $('.orange').hide();
+        $('.bery').hide();
+
+//        $('#checkbox1').change(function() {
+//            if($(this).is(":checked")) {
+////                var returnVal = confirm("Are you sure?");
+//                $('.yely').show();
+//                $(this).attr("checked", returnVal);
+//            }else{
+//                 $('.yely').hide()();
+//            }    
+//        });
+
+        $('input[type=checkbox]').each(function() {
+           var id = $(this).attr('id');
+           var no = id.split('-')[1];
+           var className = '.yely';
+            if (parseInt(no) == 2) {
+                className = '.orange';
+            } else if (parseInt(no) == 3) {
+                className = '.bery';
+            }
+            
+            
+            
+            
+                
+           $(this).change(function() {
+            if($(this).is(":checked")) {
+                
+                var returnVal = confirm("Are you sure?");
+                $(className).show();
+                $(this).attr("checked", returnVal);
+                var toppingArr = document.getElementById('topping_id_arr').value;
+                if (toppingArr.length == 0) {
+                    toppingArr = id.split('-')[0];
+                } else {
+                    toppingArr += "," + id.split('-')[0];
+                }
+                document.getElementById('topping_id_arr').value = toppingArr;
+            }else{
+                $(className).hide();
+                var toppingArr = document.getElementById('topping_id_arr').value;
+                if (toppingArr.length == 0) {
+                    toppingArr = '';
+                } else {
+                    var topTemp = toppingArr.split(",");
+                    var indexSearch = topTemp.indexOf(id.split('-')[0]);
+                    if (indexSearch > -1) {
+                        topTemp.splice(indexSearch, 1); 
+                    }
+                }
+                document.getElementById('topping_id_arr').value = topTemp.toString();
+            }    
+        });
+        
+        });
+>>>>>>> origin/master
 
     });
 
@@ -172,8 +336,10 @@
                         <span>| หยิบใส่ตะกร้า</span>
                     </button>
                 </a>
+                <input type="hidden" id="time" value="<?php echo $product['time']; ?>">
             </div>
             <div class="yely">
+<<<<<<< HEAD
                          <img class="c360" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
                         <img class="c45" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
                         <img class="c90" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
@@ -182,12 +348,48 @@
                         <img class="c225" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
                         <img class="c270" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
                         <img class="c315" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px" >
+=======
+               <img class="c360" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c45" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c90" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c135" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c180" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c225" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c270" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c315" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px" >
+               
+               
+            </div>
+            
+            <div class="orange">
+               <img class="c1360" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c145" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c190" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c1135" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c1180" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c1225" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c1270" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c1315" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px" >
+            </div>
+            
+            <div class="bery">
+                <img class="c2360" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c245" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c290" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c2135" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c2180" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+               <img class="c2225" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
+>>>>>>> origin/master
             </div>
 
         </div>
 
         <div id="panel-right">
+<<<<<<< HEAD
             <input id="checkbox1" type="checkbox">yely</div>
+=======
+            
+>>>>>>> origin/master
             <table id="select-cake">
                 <?php $i = 1; ?>
                 <tr>
@@ -196,11 +398,21 @@
                             <div><img onclick="drawImage(this.id, this.src)" id="<?php echo $topping['toping_id']; ?>" src="<?php echo Yii::app()->request->baseUrl . $topping['toping_url']; ?>" 
                                       width="60px" ></div>
                             <div style="font-size: 14px;"><?php echo $topping['toping_name']; ?></div>
+<<<<<<< HEAD
                         </td>
                         <?php if ($i % 4 == 0) : ?>
                         </tr><tr>
                             <?php $i++;
                         endif; ?>
+=======
+                            <div><input id="<?php echo $topping['toping_id']; ?>-<?php echo $i; ?>" type="checkbox" value="<?php echo $topping['toping_id']; ?>"></div>
+                        </td>
+                        <?php if ($i % 4 == 0) : ?>
+                        </tr><tr>
+                            <?php 
+                        endif;$i++; ?>
+                            
+>>>>>>> origin/master
 
 <?php endforeach; ?>
                 </tr>
