@@ -144,14 +144,17 @@
                         <li id="bills_limit">
                             <a href="index.php?r=Reports/BillsLimitdate"><i class="fa fa-edit fa-fw"></i> แจ้งเตือนให้ชำระเงิน</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> สรุปยอดขาย</a>
+                        <li id="summary">
+                            <a href="index.php?r=Reports/summary"><i class="fa fa-edit fa-fw"></i> สรุปยอดขาย</a>
                         </li>
                         <li id="comfirmPayment">
                             <a href="index.php?r=Reports/ComfirmPayment"><i class="fa fa-edit fa-fw"></i> รายการแจ้งโอน</a>
                         </li>
                         <li id="notification">
                             <a href="index.php?r=Reports/Notification"><i class="fa fa-edit fa-fw"></i> รายการแจ้งเตือนบิลที่ยังไม่จ่ายเงิน</a>
+                        </li>
+                        <li id="seadDay">
+                            <a href="index.php?r=Reports/SendbyCurrentDate"><i class="fa fa-list fa-fw"></i> รายสินค้านำส่งวันนี้</a>
                         </li>
                         <li id="logout">
                             <a href="index.php?r=Site/"><i class="fa fa-close fa-fw"></i> ออกจากระบบ</a>

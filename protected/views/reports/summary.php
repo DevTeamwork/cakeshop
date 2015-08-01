@@ -1,7 +1,7 @@
 <script>
     $(function () {
 //        alert("asdf");
-        var page = $("#side-menu li#comfirmPayment");
+        var page = $("#side-menu li#orders");
 //        page.addClass("active");
 //        page.find("ul").first().addClass("nav nav-second-level collapse in");
 //        var ul = page.find("ul").first();
@@ -33,11 +33,6 @@
         };
 
         $('#table').dataTable({
-//            "bLengthChange": false,
-//            "bPaginate": false,
-//            "ordering": false,
-//            "info":     false,    
-//            "paging":   false,
             "language": languageObj
         });
 
@@ -85,57 +80,59 @@
 
 <div class="row ">
     <div class="col-lg-12">
-        <h1 class="page-header"><i class="fa fa-bar-chart-o fa-fw"></i> รายการแจ้งโอน </h1>
+        <h1 class="page-header"><i class="fa fa-bar-chart-o fa-fw"></i> บิลทั้งหมด</h1>
     </div>
 </div>
 
 <!--<ol class="breadcrumb">
-    <li><a href="index.php?r=Reports/Orders"><i class="fa fa-edit fa-fw"></i> บิลทั้งหมด</a></li>
-    <li class="active">บิลเลขที่ : <?php echo $model[0]["order_id"]; ?></li>                                     
+    <li><a href="index.php?r=Banks/index"><i class="fa fa-bar-chart-o fa-fw"></i> รายการแจ้งเตือนบิลที่ยังไม่จ่ายเงิน</a></li>
+    <li class="active">เพิ่มสินค้าใหม่</li>                                     
 </ol>-->
 <div class="panel panel-default">
     <div class="panel-body">      
         <table class="table table-condensed table-striped" id="table">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>เลขที่บิล</th>
-                    <th>ชื่อ</th>
-                    <th>ธนาคาร</th>
-                    <th>วันที่</th>
-                    <th>เวลา</th>
-                    <th>เป็นเงิน (บาท) </th>
+                    <th>วันที่จ่าย</th>
+                    <th>จำนวนเงิน</th>
+<!--                    <th>วันที่</th>
+                    <th>สถานะ</th>
+                    <th>เมนู</th>-->
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $row = 0;
                 $total_price = 0;
                 foreach ($model as $model):
-                    $id = $model["order_id"];
-                    $firstname = $model["firstname"];
-                    $lastname = $model["lastname"];
-                    $create_date = $model["create_date"];
-                    $create_time = $model["create_time"];
+                    $id = $model["bill_id"];
+                    $firstname = $model["create_date"];
                     $price = $model["price"];
-                    $bank_name = $model["bank_name"];
+                    
+                    $total_price = $total_price + $price;
+                    
+//                    $order_date = $model["order_date"];
 //                    $order_status = $model["order_status"];
-                    $row ++;
                     ?>
                     <tr>
-                        <td style="width: 10%;"><?php echo $row; ?></td>
-                        <td><?php echo $id; ?></td>
-                        <td><?php echo $firstname . " " . $lastname; ?></td>
-                        <td><?php echo $bank_name; ?></td>
-                        <td style="width: 20%;"><?php echo $create_time; ?></td> 
-                        <td style="width: 15%;"><?php echo $create_date; ?></td> 
-
+                        <td style="width: 10%;"><?php echo $id; ?></td>
+                        <td style="width: 15%;"><?php echo $firstname; ?></td> 
                         <td style="width: 15%;"><?php echo $price; ?></td> 
+                        <!--<td style="width: 20%;"><?php echo $order_date; ?></td>-->                         
                     </tr>
                 <?php endforeach; ?>
-
-
+                    
+                    <tr>
+                        <td></td>
+                        <td>รวม</td> 
+                        <td style="width: 20%;"><?php echo $total_price; ?></td> 
+                    </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+
+
+
+

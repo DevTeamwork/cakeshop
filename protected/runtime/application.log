@@ -2715,3 +2715,292 @@ Stack trace:
 #16 {main}
 REQUEST_URI=/cakeshop/
 ---
+2015/07/26 12:58:45 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'od' in 'where clause'. The SQL statement executed was: SELECT `od`.*, `u`.*, `o`.*
+FROM `order_detail` `od`
+JOIN `order` `o` ON od.order_id  = o.order_id
+JOIN `users` `u` ON o.customer_id = u.user_id
+WHERE od=:send_date.
+in C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php (155)
+in C:\AppServ\www\cakeshop\index.php (13)
+2015/07/26 12:58:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'od' in 'where clause'. The SQL statement executed was: SELECT `od`.*, `u`.*, `o`.*
+FROM `order_detail` `od`
+JOIN `order` `o` ON od.order_id  = o.order_id
+JOIN `users` `u` ON o.customer_id = u.user_id
+WHERE od=:send_date' in C:\AppServ\www\cakeshop\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(155): CDbCommand->queryAll()
+#2 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSendDay()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('SendDay')
+#7 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/SendDay')
+#8 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendDay
+---
+2015/07/26 12:00:32 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\AppServ\www\cakeshop\framework\web\CController.php:336
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('SendDay')
+#4 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/SendDay')
+#5 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendDay
+---
+2015/07/26 12:00:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "SendDay?date=2014".' in C:\AppServ\www\cakeshop\framework\web\CController.php:483
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(270): CController->missingAction('SendDay?date=20...')
+#1 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('SendDay?date=20...')
+#2 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/SendDay...')
+#3 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendDay?date=2014
+---
+2015/07/26 12:01:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "SendDay?date=2015-07-26".' in C:\AppServ\www\cakeshop\framework\web\CController.php:483
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(270): CController->missingAction('SendDay?date=20...')
+#1 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('SendDay?date=20...')
+#2 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/SendDay...')
+#3 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendDay?date=2015-07-26
+---
+2015/07/26 12:03:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "SendDay?date=2015-07-26".' in C:\AppServ\www\cakeshop\framework\web\CController.php:483
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(270): CController->missingAction('SendDay?date=20...')
+#1 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('SendDay?date=20...')
+#2 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/SendDay...')
+#3 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendDay?date=2015-07-26
+---
+2015/07/26 12:03:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\AppServ\www\cakeshop\framework\web\CController.php:336
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('SendDay')
+#4 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/SendDay...')
+#5 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/SendDay/date=2015-07-26
+---
+2015/07/26 13:50:57 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "sendbyCurrentDate".' in C:\AppServ\www\cakeshop\framework\web\CController.php:878
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\views\site\index.php(147): CController->renderPartial('sendbyCurrentDa...', Array)
+#1 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(126): require('C:\AppServ\www\...')
+#2 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\AppServ\www\...', Array, true)
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(869): CBaseController->renderFile('C:\AppServ\www\...', Array, true)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\AppServ\www\cakeshop\protected\controllers\SiteController.php(21): CController->render('index', Array)
+#6 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Site/')
+#12 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/cakeshop/index.php?r=Site/
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/SendbyCurrentDate
+---
+2015/07/26 13:51:47 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "sendbyCurrentDate".' in C:\AppServ\www\cakeshop\framework\web\CController.php:878
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\views\site\index.php(147): CController->renderPartial('sendbyCurrentDa...', Array)
+#1 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(126): require('C:\AppServ\www\...')
+#2 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\AppServ\www\...', Array, true)
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(869): CBaseController->renderFile('C:\AppServ\www\...', Array, true)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\AppServ\www\cakeshop\protected\controllers\SiteController.php(21): CController->render('index', Array)
+#6 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Site/')
+#12 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/cakeshop/index.php?r=Site/
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/SendbyCurrentDate
+---
+2015/07/26 13:52:32 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "sendbyCurrentDate".' in C:\AppServ\www\cakeshop\framework\web\CController.php:878
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\views\site\index.php(145): CController->renderPartial('sendbyCurrentDa...', Array)
+#1 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(126): require('C:\AppServ\www\...')
+#2 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\AppServ\www\...', Array, true)
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(869): CBaseController->renderFile('C:\AppServ\www\...', Array, true)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\AppServ\www\cakeshop\protected\controllers\SiteController.php(21): CController->render('index', Array)
+#6 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Site/')
+#12 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/cakeshop/index.php?r=Site/
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/SendbyCurrentDate
+---
+2015/07/26 13:53:01 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "sendbyCurrentDate".' in C:\AppServ\www\cakeshop\framework\web\CController.php:878
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\views\site\index.php(145): CController->renderPartial('sendbyCurrentDa...', Array)
+#1 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(126): require('C:\AppServ\www\...')
+#2 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\AppServ\www\...', Array, true)
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(869): CBaseController->renderFile('C:\AppServ\www\...', Array, true)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\AppServ\www\cakeshop\protected\controllers\SiteController.php(21): CController->render('index', Array)
+#6 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Site/')
+#12 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/cakeshop/index.php?r=Site/
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Reports/SendbyCurrentDate
+---
+2015/07/26 15:30:14 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "sendbyCurrentDate".' in C:\AppServ\www\cakeshop\framework\web\CController.php:878
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\views\site\index.php(146): CController->renderPartial('sendbyCurrentDa...', Array)
+#1 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(126): require('C:\AppServ\www\...')
+#2 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\AppServ\www\...', Array, true)
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(869): CBaseController->renderFile('C:\AppServ\www\...', Array, true)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\AppServ\www\cakeshop\protected\controllers\SiteController.php(23): CController->render('index', Array)
+#6 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#12 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/cakeshop/index.php?r=site
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=frontend/login
+---
+2015/07/26 15:31:00 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "PartialSendbyCurrentDate".' in C:\AppServ\www\cakeshop\framework\web\CController.php:878
+Stack trace:
+#0 C:\AppServ\www\cakeshop\protected\views\site\index.php(146): CController->renderPartial('PartialSendbyCu...', Array)
+#1 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(126): require('C:\AppServ\www\...')
+#2 C:\AppServ\www\cakeshop\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\AppServ\www\...', Array, true)
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(869): CBaseController->renderFile('C:\AppServ\www\...', Array, true)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#5 C:\AppServ\www\cakeshop\protected\controllers\SiteController.php(23): CController->render('index', Array)
+#6 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('site')
+#12 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/cakeshop/index.php?r=site
+HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=frontend/login
+---
+2015/07/26 17:23:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "sammary".' in C:\AppServ\www\cakeshop\framework\web\CController.php:483
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(270): CController->missingAction('sammary')
+#1 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('sammary')
+#2 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/sammary')
+#3 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/sammary
+---
+2015/07/26 17:32:46 [error] [php] Invalid argument supplied for foreach() (C:\AppServ\www\cakeshop\protected\views\reports\summary.php:107)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(869): ReportsController->renderFile()
+#1 C:\AppServ\www\cakeshop\framework\web\CController.php(782): ReportsController->renderPartial()
+#2 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(180): ReportsController->render()
+#3 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSummary()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#6 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#7 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#8 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/summary
+in C:\AppServ\www\cakeshop\protected\views\reports\summary.php (107)
+in C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php (180)
+in C:\AppServ\www\cakeshop\index.php (13)
+2015/08/01 15:06:47 [error] [php] Invalid argument supplied for foreach() (C:\AppServ\www\cakeshop\protected\views\reports\summary.php:107)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(869): ReportsController->renderFile()
+#1 C:\AppServ\www\cakeshop\framework\web\CController.php(782): ReportsController->renderPartial()
+#2 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(180): ReportsController->render()
+#3 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSummary()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#6 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#7 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#8 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/summary
+in C:\AppServ\www\cakeshop\protected\views\reports\summary.php (107)
+in C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php (180)
+in C:\AppServ\www\cakeshop\index.php (13)
+2015/08/01 15:24:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Report/Summary".' in C:\AppServ\www\cakeshop\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Report/Summary')
+#1 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cakeshop/index.php?r=Report/Summary
+---
+2015/08/01 15:24:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cakeshop_db.paymentscomfirm' doesn't exist. The SQL statement executed was: SELECT *
+FROM `PaymentsComfirm`.
+in C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php (183)
+in C:\AppServ\www\cakeshop\index.php (13)
+2015/08/01 15:24:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cakeshop_db.paymentscomfirm' doesn't exist. The SQL statement executed was: SELECT *
+FROM `PaymentsComfirm`' in C:\AppServ\www\cakeshop\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(183): CDbCommand->queryAll()
+#2 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSummary()
+#3 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('Summary')
+#7 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Reports/Summary')
+#8 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/cakeshop/index.php?r=Reports/Summary
+---
+2015/08/01 15:33:22 [error] [php] Invalid argument supplied for foreach() (C:\AppServ\www\cakeshop\protected\views\reports\summary.php:107)
+Stack trace:
+#0 C:\AppServ\www\cakeshop\framework\web\CController.php(869): ReportsController->renderFile()
+#1 C:\AppServ\www\cakeshop\framework\web\CController.php(782): ReportsController->renderPartial()
+#2 C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php(185): ReportsController->render()
+#3 C:\AppServ\www\cakeshop\framework\web\actions\CInlineAction.php(49): ReportsController->actionSummary()
+#4 C:\AppServ\www\cakeshop\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\AppServ\www\cakeshop\framework\web\CController.php(286): ReportsController->runAction()
+#6 C:\AppServ\www\cakeshop\framework\web\CController.php(265): ReportsController->runActionWithFilters()
+#7 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): ReportsController->run()
+#8 C:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\AppServ\www\cakeshop\index.php(13): CWebApplication->run()
+REQUEST_URI=/cakeshop/index.php?r=Reports/Summary
+in C:\AppServ\www\cakeshop\protected\views\reports\summary.php (107)
+in C:\AppServ\www\cakeshop\protected\controllers\ReportsController.php (185)
+in C:\AppServ\www\cakeshop\index.php (13)
