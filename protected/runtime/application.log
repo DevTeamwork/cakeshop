@@ -2756,3 +2756,29 @@ REQUEST_URI=/cakeshop/index.php?r=Cart/addToCart&product_id=2&greeting=&send_dat
 HTTP_REFERER=http://localhost:81/cakeshop/index.php?r=Frontend/selectSendDate&product_id=2
 ---
 >>>>>>> origin/master
+2015/07/21 00:42:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\AppServ\www\cakeshop\framework\web\CController.php:336
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('addToCart')
+#4 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Cart/addToCart')
+#5 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/cakeshop/index.php?r=Cart/addToCart&product_id=2&greeting=&send_date=2015-07-21
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=Frontend/selectSendDate&product_id=2
+---
+2015/08/01 14:55:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\AppServ\www\cakeshop\framework\web\CController.php:336
+Stack trace:
+#0 D:\AppServ\www\cakeshop\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\AppServ\www\cakeshop\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\AppServ\www\cakeshop\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(282): CController->run('addToCart')
+#4 D:\AppServ\www\cakeshop\framework\web\CWebApplication.php(141): CWebApplication->runController('Cart/addToCart')
+#5 D:\AppServ\www\cakeshop\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\AppServ\www\cakeshop\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/cakeshop/index.php?r=Cart/addToCart&product_id=1&greeting=&send_date=2015-08-01
+HTTP_REFERER=http://localhost/cakeshop/index.php?r=Frontend/selectSendDate&product_id=1
+---
