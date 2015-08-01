@@ -65,7 +65,7 @@ class FrontendController extends Controller {
             }
         }
         
-        
+        $this->redirect('index.php?r=frontend');
     }
     
     public function actionRegister(){
@@ -98,5 +98,76 @@ class FrontendController extends Controller {
     public function actionSelectSendDate($product_id) {
         $product = Products::model()->findByPk($product_id);
         $this->render('select_send_date', array('product' => $product));
+    }
+    
+    public function actionShowOrderPayment() {
+        
+        $user_id = Yii::app()->session["user_id"];
+        $orders = "";
+        $message = "";
+        if (!empty($user_id)) {
+            $order_query = "SELECT *, ("
+                    . "SELECT SUM(product_price * order_qty) FROM order_detail "
+                    . "WHERE order_id = ord.order_id GROUP BY order_id "
+                    . ") AS price  FROM cakeshop_db.order AS ord "
+                    . "LEFT JOIN users AS u ON ord.customer_id = u.user_id "
+                    . "WHERE ord.order_status IN(0, 1) "
+                    . "AND ord.customer_id = $user_id";
+            $orders = Yii::app()->db->createCommand($order_query)->queryAll();
+        } else {
+            $message = 'กรุณาเข้าสู่ระบบก่อนแจ้งชำระเงิน';
+        }
+        $this->render('order_payment', array(
+            'orders' => $orders,
+            'message' =>  $message,
+        ));
+    }
+    
+    public function actionPaymentForm($order_id) {
+        $user = Users::model()->findByPk(Yii::app()->session["user_id"]);
+        $order = Order::model()->findByPk($order_id);
+        $banks = Banks::model()->findAll();
+        
+        $this->render('payment_form', array(
+            'user' => $user,
+            'order' => $order,
+            'banks' => $banks
+        ));
+    }
+    
+    public function actionSavePayment() {
+        $destination =  $_SERVER['DOCUMENT_ROOT'] . Yii::app()->request->baseUrl . '/images/slips/';
+
+        if (!empty($_FILES['slip_image']['name'])) {
+            //var_dump($_FILES);
+            $file = $_FILES['slip_image']['name'];
+            $file_arr = explode(".", $file);
+            $filename = 'slip'.uniqid(). '.' . $file_arr[1] ;
+            move_uploaded_file($_FILES['slip_image']['tmp_name'], $destination . $filename);
+            //copy($_FILES['slip_image']['tmp_name'], $destination . $filename);
+        }
+        
+        if (!empty($_POST)) {
+            $payment = new PaymentsComfirm();
+            $payment->bank_id = $_POST['bank_id'];
+            $payment->bill_id = $_POST['order_id'];
+            $payment->user_id = Yii::app()->session["user_id"];
+            $payment->price = $_POST['pay_price'];
+            $payment->pay_date = $_POST['pay_date'];
+            $payment->pay_time = $_POST['pay_time'];
+            $payment->comment = $_POST['comment'];
+            $payment->slip_imag = $destination . $filename;
+            $payment->bank_branch = $_POST['bank_branch'];
+            $payment->create_date = date('Y-m-d');
+            $payment->create_time = date('H:i', time());
+            $payment->save();
+            
+            $order = Order::model()->findByPk($_POST['order_id']);
+            $order->order_status = 2;
+            $order->save();
+            Yii::app()->user->setFlash('success', 'บันทึกข้อมูลการชำระเงินเรียบร้อยแล้ว');
+        }
+       
+        $this->redirect('index.php?r=frontend/showOrderPayment');
     }
 }

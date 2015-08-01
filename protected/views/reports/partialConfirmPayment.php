@@ -83,19 +83,7 @@
     }
 </style>
 
-<div class="row ">
-    <div class="col-lg-12">
-        <h1 class="page-header"><i class="fa fa-bar-chart-o fa-fw"></i> รายการแจ้งโอน </h1>
-    </div>
-</div>
-
-<!--<ol class="breadcrumb">
-    <li><a href="index.php?r=Reports/Orders"><i class="fa fa-edit fa-fw"></i> บิลทั้งหมด</a></li>
-    <li class="active">บิลเลขที่ : <?php echo $model[0]["order_id"]; ?></li>                                     
-</ol>-->
-<div class="panel panel-default">
-    <div class="panel-body">      
-        <table class="table table-condensed table-striped" id="table">
+<table class="table table-condensed table-striped" id="table">
             <thead>
                 <tr>
                     <th>#</th>
@@ -137,5 +125,3 @@
 
             </tbody>
         </table>
-    </div>
-</div>

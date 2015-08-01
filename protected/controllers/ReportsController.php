@@ -143,6 +143,49 @@ WHERE DATEDIFF( DATE(  `limit_date` ) , CURDATE( ) ) =1
                 'model' => $model
             ));
         }
+        
+        public function actionSendbyDate($date){
+//            $date = date("Y-m-d"); 
+            echo date("Y-m-d");
+            $model = Yii::app()->db->createCommand()
+                ->select('od.*,u.*,o.*,p.*')
+                ->from('order_detail od')
+                ->join('order o', 'od.order_id  = o.order_id')
+                ->join('users u','o.customer_id = u.user_id')
+                ->join('products p','od.product_id = p.product_id')
+                ->where('od.send_date=:send_date', array(':send_date' => $date))
+                ->queryAll();
+            
+            echo CJSON::encode($model);
+        }
+        
+        public function actionSendbyCurrentDate(){
+            $date = date("Y-m-d"); 
+//            echo date("Y-m-d");
+            $model = Yii::app()->db->createCommand()
+                ->select('od.*,u.*,o.*,p.*')
+                ->from('order_detail od')
+                ->join('order o', 'od.order_id  = o.order_id')
+                ->join('users u','o.customer_id = u.user_id')
+                ->join('products p','od.product_id = p.product_id')
+                ->where('od.send_date=:send_date', array(':send_date' => $date))
+                ->queryAll();
+            
+//            echo CJSON::encode($model);
+            $this->render("sendbyCurrentDate",array(
+                    "model"=>$model
+                ));
+        }
+        public function actionSummary(){
+            $model = Yii::app()->db->createCommand()
+                    ->select("*")
+                    ->from("payments_comfirm")
+                    ->queryAll();
+//            echo CJSON::encode($model);
+            $this->render("summary",array(
+                    "model"=>$model
+            ));
+        }
 
         // Uncomment the following methods and override them if needed
 	/*

@@ -97,6 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <li><a href="index.php?r=frontend/products">สินค้า</a></li>
                     <li><a href="#">เกี่ยวกับเรา</a></li>
                     <li><a href="#">ติดต่อเรา</a></li>
+                    <li><a href="index.php?r=frontend/showOrderPayment">แจ้งชำระเงิน</a></li>
                     <div class="clearfix"> </div>
                 </ul>
             </div>	
