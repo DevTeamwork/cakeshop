@@ -32,15 +32,9 @@
 
     }
     .c90{
-<<<<<<< HEAD
-          left: 369px;
-  top: 300px;
-  position: absolute;
-=======
         left: 369px;
         top: 300px;
         position: absolute;
->>>>>>> origin/master
     }
     .c135{
         left: 275px;
@@ -67,8 +61,6 @@
         top: 489px;
         position: absolute;
     }
-<<<<<<< HEAD
-=======
     /* block 2 */
     .c1360{
         left: 490px;
@@ -145,15 +137,11 @@
         position: absolute;
     }
     
->>>>>>> origin/master
 </style>
 <script type="text/javascript">
 
 
     $(function () {
-<<<<<<< HEAD
-        $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
-=======
         var timeStr = parseInt($('#time').val());
         var date = new Date();
         var today = date.getFullYear() + "-" + ((date.getMonth().toString().length == 1 ? '0' : '') + (parseInt(date.getMonth()) + 1)) + "-" +date.getDate();
@@ -169,22 +157,10 @@
                 return [ array.indexOf(string) == -1 ]
             }
         });
->>>>>>> origin/master
 
         //set initial state.
 //        $('#textbox1').val($(this).is(':checked'));
 
-<<<<<<< HEAD
-        $('#checkbox1').change(function() {
-            if($(this).is(":checked")) {
-//                var returnVal = confirm("Are you sure?");
-                $('.yely').show();
-                $(this).attr("checked", returnVal);
-            }else{
-                 $('.yely').hide()();
-            }    
-        });
-=======
         $('.yely').hide();
         $('.orange').hide();
         $('.bery').hide();
@@ -216,9 +192,9 @@
            $(this).change(function() {
             if($(this).is(":checked")) {
                 
-                var returnVal = confirm("Are you sure?");
+               // var returnVal = confirm("Are you sure?");
                 $(className).show();
-                $(this).attr("checked", returnVal);
+                //$(this).attr("checked", returnVal);
                 var toppingArr = document.getElementById('topping_id_arr').value;
                 if (toppingArr.length == 0) {
                     toppingArr = id.split('-')[0];
@@ -243,7 +219,6 @@
         });
         
         });
->>>>>>> origin/master
 
     });
 
@@ -329,8 +304,8 @@
             <img id="main-cake" src="/cakeshop/images/products/fruit_burned.png" width="350">
             <!--</canvas>-->
             <div class="biseller-name" style="margin-top: 10px;">
-                <h4>เค้กผลไม้</h4>
-                <p>ราคา 300 บาท</p>
+                <h4><?php echo $product['name']; ?></h4>
+                <p>ราคา <?php echo $product['price']; ?> บาท</p>
                 <a href="javascript:redirectToCart()">
                     <button class="add2cart">
                         <span>| หยิบใส่ตะกร้า</span>
@@ -339,16 +314,6 @@
                 <input type="hidden" id="time" value="<?php echo $product['time']; ?>">
             </div>
             <div class="yely">
-<<<<<<< HEAD
-                         <img class="c360" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
-                        <img class="c45" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
-                        <img class="c90" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
-                        <img class="c135" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
-                        <img class="c180" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
-                        <img class="c225" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
-                        <img class="c270" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
-                        <img class="c315" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px" >
-=======
                <img class="c360" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
                <img class="c45" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
                <img class="c90" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
@@ -379,17 +344,12 @@
                <img class="c2135" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
                <img class="c2180" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
                <img class="c2225" src="<?php echo Yii::app()->request->baseUrl; ?>/images/toppings/download_burned.png" width="30px">
->>>>>>> origin/master
             </div>
 
         </div>
 
         <div id="panel-right">
-<<<<<<< HEAD
-            <input id="checkbox1" type="checkbox">yely</div>
-=======
             
->>>>>>> origin/master
             <table id="select-cake">
                 <?php $i = 1; ?>
                 <tr>
@@ -398,13 +358,6 @@
                             <div><img onclick="drawImage(this.id, this.src)" id="<?php echo $topping['toping_id']; ?>" src="<?php echo Yii::app()->request->baseUrl . $topping['toping_url']; ?>" 
                                       width="60px" ></div>
                             <div style="font-size: 14px;"><?php echo $topping['toping_name']; ?></div>
-<<<<<<< HEAD
-                        </td>
-                        <?php if ($i % 4 == 0) : ?>
-                        </tr><tr>
-                            <?php $i++;
-                        endif; ?>
-=======
                             <div><input id="<?php echo $topping['toping_id']; ?>-<?php echo $i; ?>" type="checkbox" value="<?php echo $topping['toping_id']; ?>"></div>
                         </td>
                         <?php if ($i % 4 == 0) : ?>
@@ -412,7 +365,6 @@
                             <?php 
                         endif;$i++; ?>
                             
->>>>>>> origin/master
 
 <?php endforeach; ?>
                 </tr>
